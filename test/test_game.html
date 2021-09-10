@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .game_button
+    {
+        width: 100px;
+        height: 50px;
+    }
+</style>
+
+<div id="page_status_disp" style="width: 100%; display: block; margin-top: 100px" align="center">start</div>
+<div id="main_disp" style="width: 100%; display: block; margin-top: 100px; font-family: Consolas" align="center">start</div>
+<div style="width: 100%; display: block; margin-top: 100px" align="center">
+    <table>
+        <tr>
+            <td></td>
+            <td>
+                <button id="button_up" class="game_button">up</button>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <button id="button_left" class="game_button">left</button>
+            </td>
+            <td></td>
+            <td>
+                <button id="button_right" class="game_button">right</button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button id="button_down" class="game_button">down</button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+var page_status_display = document.getElementById('page_status_disp');
+page_status_display.innerHTML = 'SET START VALUES';
+
+var main_display = document.getElementById('main_disp');
+var display_field_radius = 5;
+var game_field_size = 50;
+var game_field = [];
+var walls_count = 50 * 50 / 10 | 0; // "| 0" делает результат целочисленным, если вдруг оно не. Наверное...
+var player_position = {
+    X: game_field_size / 2 | 0,
+    Y: game_field_size / 2 | 0,
+};
+
+function get_random_int(min, max)
+{
+    return ((Math.random() * (max - min)) + min) | 0;
+}
+
+page_status_display.innerHTML = 'INIT GAME FIELD';
+
+new function init_game_field()
+{
+    for(var x = 0; x < game_field_size; x++)
+    {
+        game_field[x] = [];
+        for(var y = 0; y < game_field_size; y++)
+        {
+            game_field[x][y] = true;
+        }
+    }
+
+    for(var i = 0; i < game_field_size; i++)
+    {
+        game_field[0][i] = false;
+        game_field[game_field_size - 1][i] = false;
+        game_field[i][0] = false;
+        game_field[i][game_field_size - 1] = false;
+    }
+
+    for(var i = 0; i < walls_count; i++)
+    {
+        var x = get_random_int(2, game_field_size - 3);
+        var y = get_random_int(2, game_field_size - 3);
+        game_field[x][y] = false;
+    }
+
+    while(!game_field[player_position.X][player_position.Y])
+    {
+        player_position.X = get_random_int(1, game_field_size - 1);
+        player_position.Y = get_random_int(1, game_field_size - 1);
+    }
+}
+//init_game_field();
+
+page_status_display.innerHTML = 'INIT FUNCTIONS';
+
+// Durections:
+//   0
+// 3   1
+//   2
+
+function move_player(direction)
+{
+    direction %= 4;
+
+    if(direction === 0) // up
+    {
+        if(game_field[player_position.X][player_position.Y - 1])
+        {
+            player_position.Y--;
+            return true;
+        }
+    }
+    else if (direction === 1) // right
+    {
+        if(game_field[player_position.X + 1][player_position.Y])
+        {
+            player_position.X++;
+            return true;
+        }
+    }
+    else if (direction === 2) // down
+    {
+        if(game_field[player_position.X][player_position.Y + 1])
+        {
+            player_position.Y++;
+            return true;
+        }
+    }
+    else // left
+    {
+        if(game_field[player_position.X - 1][player_position.Y])
+        {
+            player_position.X--;
+            return true;
+        }
+    }
+    return false;
+}
+
+function print_display()
+{
+    function get_game_field_char(x, y)
+    {
+        if(x < 0 || x >= game_field_size) return '#';
+        if(y < 0 || y >= game_field_size) return '#';
+
+        if(game_field[x][y]) return '.';
+        return '#';
+    }
+
+    var res = '';
+    for(var y = -display_field_radius; y <= display_field_radius; y++)
+    {
+        var tstr = '';
+        for(var x = -display_field_radius; x <= display_field_radius; x++)
+        {
+            if(y == 0 && x == 0) tstr += '@';
+            else tstr += get_game_field_char(player_position.X + x, player_position.Y + y);
+        }
+        res += tstr + '<br>';
+    }
+
+    main_display.innerHTML = res;
+}
+
+function game_step(player_move_direction)
+{
+    if(move_player(player_move_direction))
+    {
+        print_display();
+    }
+}
+
+page_status_display.innerHTML = 'INIT BUTTONS';
+
+document.getElementById('button_up').onclick = function () { game_step(0); };
+document.getElementById('button_right').onclick = function () { game_step(1); };
+document.getElementById('button_down').onclick = function () { game_step(2); };
+document.getElementById('button_left').onclick = function () { game_step(3); };
+
+document.onkeydown = function(e)
+{
+    switch(e.keyCode)
+    {
+        case 37: // left
+            game_step(3);
+            break;
+        case 38: // up
+            game_step(0);
+            break;
+        case 39: // right
+            game_step(1);
+            break;
+        case 40: // down
+            game_step(2);
+            break;
+    }
+};
+
+page_status_display.innerHTML = 'READY!';
+print_display();
+
+</script>
+
+</body>
+</html>

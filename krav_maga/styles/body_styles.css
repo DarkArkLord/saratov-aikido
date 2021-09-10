@@ -1,0 +1,153 @@
+.body_container
+{
+    color: white;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    font-weight: bold;
+    font-family: "Century Gothic";
+}
+
+.body_inner_container
+{
+    margin-top: 10px;
+    /*border: solid 1px red;*/
+}
+
+.body_inner_container > .container_block
+{
+    clear:both;
+}
+
+.body_head
+{
+    width: 100%;
+    font-size: 400%;
+    text-align: left;
+}
+
+.body_top_left
+{
+    width: 59%;
+    margin-right: 1%;
+    float: left;
+}
+
+.body_top_right_pic
+{
+    width: 40%;
+    float: left;
+}
+
+.picture_without_angles
+{
+    border-radius: 5px;
+}
+
+.body_trainer_left_pic
+{
+    width: 20%;
+    margin-right: 1%;
+    float: left;
+}
+
+.body_trainer_mid
+{
+    width: 58%;
+    float: left;
+}
+
+.body_trainer_right_pic
+{
+    width: 20%;
+    margin-left: 1%;
+    float: left;
+}
+
+.body_trains
+{
+    width: 100%;
+    font-size: 400%;
+    text-align: center;
+}
+
+.body_trains_pic_line_first
+{
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    height: 320px;
+}
+
+.body_trains_pic_line_second
+{
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    height: 260px;
+}
+
+.body_trains_container
+{
+    width: 32%;
+    margin: 0 0.5% 0 0.5%;
+    float: left;
+}
+
+.body_trains_pic
+{
+    width: 100%;
+    clear: both;
+}
+
+.body_trains_text
+{
+    width: 100%;
+    clear: both;
+    float: left;
+    text-align: center;
+}
+
+.body_map_head
+{
+    width: 100%;
+    font-size: 400%;
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+
+.body_map_adres
+{
+    width: 100%;
+    text-align: left;
+    padding: 5px 0 10px 10px;
+}
+
+.body_map_link
+{
+    color: white;
+    text-decoration: underline;
+}
+
+.body_map_link:hover
+{
+    color: blue;
+}
+
+.partner_container
+{
+    padding: 5px 0 5px 20px;
+    width: 100%;
+    font-family: "Open Sans";
+    font-weight: bold;
+    text-align: left;
+    color: white;
+}
+
+.partner_link
+{
+    text-decoration: underline;
+    color: white;
+}

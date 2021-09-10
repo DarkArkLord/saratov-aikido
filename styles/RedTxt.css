@@ -1,0 +1,30 @@
+.txt_style_red
+{
+    font-size: 14px;
+    line-height: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #BE1822;
+    font-weight: 800;
+}
+.mini_txt_style_red
+{
+    font-size: 12px;
+    line-height: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #BE1822;
+    font-weight: 700;
+}
+.thin_txt_style_red
+{
+    font-size: 16px;
+    line-height: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #BE1822;
+    font-weight: bold;
+}
+.titles_txt_style_red
+{
+    font-size: 24px;
+    font-weight: bold;
+    color: #B71822;
+}

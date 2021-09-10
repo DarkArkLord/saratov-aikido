@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="/jquery/jquery-1.11.1.min.js"></script>
+    <script>
+        $(
+            function () {
+                $("head").load("../includes/inhead.inc")
+            }
+        );
+    </script>
+</head>
+<body>
+    <script>
+        function testf(f) {
+            alert(f.value);
+        }
+    </script>
+
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td>
+                <form method="get">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                            <td width="60%" align="right">
+                                <input type="text" placeholder="Введите сообщение" align="center" name="testline"
+                                       style="width: 300px; height: 30px">
+                            </td>
+                            <td align="left">
+                                <input type="image" src="pic/close.jpg" align="center" onclick="testf(this.form.testline)"
+                                       style="width: 40px; height: 36px">
+                            </td>
+                        </tr>
+                    </table>
+                        <!-- <input type="image" src="pic/close.jpg" width="40" align="center"> -->
+                </form>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+body
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    min-width: 980px;
+    /*background-color: #330000;*/
+    /*background: url(../pic/background.jpg);*/
+}
+
+.gardient_background
+{
+    background: linear-gradient(to top, #000000, #880000);
+    background-size: cover;
+}
+
+.for_creator_container
+{
+    width: 99%;
+    font-family: "Open Sans";
+    font-weight: bold;
+    text-align: right;
+    color: #333333;
+}
+
+.for_creator
+{
+    text-decoration: none;
+    color: #333333;
+}
