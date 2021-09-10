@@ -6,4 +6,6 @@ To apache config add
 	DocumentRoot "${SRVROOT}/htdocs/saratov-aikido/"
 </VirtualHost>
 
+AddDefaultCharset UTF-8
+
 
