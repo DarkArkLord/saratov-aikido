@@ -1,0 +1,9 @@
+C:\Windows\System32\drivers\etc\hosts -> add 127.0.0.1 aikido.lh
+
+To apache config add
+<VirtualHost *:80>
+	ServerName aikido.lh
+	DocumentRoot "${SRVROOT}/htdocs/saratov-aikido/"
+</VirtualHost>
+
+
