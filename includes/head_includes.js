@@ -1,4 +1,4 @@
-import { addMetaData } from "./dom_functions.js";
+import { addMetaData, addElement } from "./dom_functions.js";
 
 
 let headElement = document.getElementsByTagName('head')[0];
@@ -15,11 +15,5 @@ addMetaData(headElement, {
         'Patrick Behezi, aikiken, айкидо для детей, спорт, рукопашный бой, самооборона'
 });
 
-let titleElement = document.createElement('title');
-titleElement.innerHTML = 'Саратовская Федерация Айкидо Айкикай';
-headElement.append(titleElement);
-
-let stylesElement = document.createElement('link');
-stylesElement.setAttribute('rel', 'stylesheet');
-stylesElement.setAttribute('href', '/styles/MyStyle.css');
-headElement.append(stylesElement);
+addElement(headElement, 'title', undefined, 'Саратовская Федерация Айкидо Айкикай');
+addElement(headElement, 'link', { rel: 'stylesheet', href: '/styles/MyStyle.css' });
