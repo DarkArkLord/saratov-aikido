@@ -1,5 +1,5 @@
-// import './head_includes.js';
-// import './header_includes.js';
+import './head_includes.js';
+
 import { HTMLTags, ItemTypes, render } from "./render_lib.js";
 
 function createColumnForParent(parent) {
@@ -121,6 +121,6 @@ let item = {
     ],
 };
 
-document.documentElement.innerHTML = "";
+document.body.innerHTML = "";
 let t = render(item);
-document.documentElement.append(t);
+document.body.append(t);

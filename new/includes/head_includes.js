@@ -1,4 +1,27 @@
-import { addMetaData, addElementForParrent } from "./dom_functions.js";
+export function addElement(parrent, tag, attributes, innerHTML) {
+    let element = document.createElement(tag);
+
+    if (attributes) {
+        for (let name in attributes) {
+            let value = attributes[name];
+            element.setAttribute(name, value);
+        }
+    }
+
+    if (innerHTML) {
+        element.innerHTML = innerHTML;
+    }
+
+    if (parrent) {
+        parrent.append(element);
+    }
+
+    return element;
+}
+
+export function addMetaData(parrent, attributes) {
+    return addElement(parrent, 'meta', attributes);
+}
 
 let headElement = document.getElementsByTagName('head')[0];
 addMetaData(headElement, { charset: 'utf-8' });
@@ -14,8 +37,8 @@ addMetaData(headElement, {
         'Patrick Behezi, aikiken, айкидо для детей, спорт, рукопашный бой, самооборона'
 });
 
-addElementForParrent(headElement, 'title', undefined, 'Саратовская Федерация Айкидо Айкикай');
-addElementForParrent(headElement, 'link', { rel: 'stylesheet', href: '/styles/MyStyle.css' });
+addElement(headElement, 'title', undefined, 'Саратовская Федерация Айкидо Айкикай');
+addElement(headElement, 'link', { rel: 'stylesheet', href: '/styles/MyStyle.css' });
 
 /*
 <meta name="description" content="Общественная организация по занятиям Айкидо Айкикай в Саратове">
