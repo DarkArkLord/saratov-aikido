@@ -1,0 +1,45 @@
+<!-- raspisanie -->
+<style>
+    .magick_container{
+        min-width: 99%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        overflow: visible;
+        position: absolute;
+        top:0px;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        HideWindow();
+        setTimeout(ShowWindow, 300);
+    });
+
+    function ShowWindow() {
+        $("#magick_window").show();
+    }
+
+    function HideWindow() {
+        $("#magick_window").hide();
+    }
+</script>
+
+<div id="magick_window" class="magick_container" align="center">
+    <div style="margin: 20px auto auto auto">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="right">
+                    <a href="javascript:HideWindow()"><img src="pic/close.jpg" width="40"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="pic/rasp.jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- end raspisanie -->
