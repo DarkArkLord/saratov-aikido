@@ -39,6 +39,13 @@ a:active
     border-top-style: solid;
     border-top-color: #999999;
 }
+.for_creators_style_container
+{
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
+    padding-right: 10px;
+}
 .for_creators_style
 {
     font-size: 12px;
