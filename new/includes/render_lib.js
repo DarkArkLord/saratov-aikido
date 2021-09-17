@@ -5,6 +5,7 @@ export const HTMLTags = {
     Image: 'img',
     Span: 'span',
     Anchor: 'a',
+    Bold: 'b'
 }
 
 export const ItemTypes = {

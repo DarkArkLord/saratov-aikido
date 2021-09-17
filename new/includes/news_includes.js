@@ -1,15 +1,11 @@
 import { HTMLTags, ItemTypes } from "./render_lib.js";
 
 const newsElements = [
-    { title: 'Главная', link: '/index.html' },
-    { title: 'Айкидо в Саратове', link: '/pages/DMenu/DAikidoVSaratove/PAikidoVSaratove.html' },
-    { title: 'Наш проект "Aikido for all"', link: '/pages/DMenu/DSpecialProject/PSpecialProject.html' },
-    { title: 'Детские группы', link: '/pages/DMenu/DChildren/PChildren.html' },
-    { title: 'Залы и расписания', link: '/pages/DMenu/DZaliIRasp/PZaliIRasp.html' },
-    { title: 'Семинары', link: '/pages/DMenu/DSeminary/PSeminary.html' },
-    { title: 'Аттестации', link: '/pages/DMenu/DAttestation/PAttestation.html' },
-    { title: 'Ссылки', link: '/pages/DMenu/DLinks/PLinks.html' },
-    { title: 'Контакты', link: '/pages/DMenu/DContacts/PContacts.html' },
+    { title: 'Приглашаем на занятия по айкидо в "Эверест"!', link: 'https://vk.com/wall-3928256_2143' },
+    { title: 'Детская летняя школа айкидо в Саратове.', link: 'https://vk.com/aikidovsaratove?w=wall-3928256_2089' },
+    { title: 'Экзамен. Май 2021.', link: 'https://vk.com/wall-3928256_2088' },
+    { title: 'Интервью Паскаля Гиймана: отход от дисциплины айкидо.', link: 'http://www.saratov-aikido.ru/pages/DMenu/DAikidoVSaratove/DArchive/DArticles/DInterviewPascal/PInterviewPascal.html' },
+    { title: 'Интерактивное обновление новостей', link: 'http://vk.com/aikidovsaratove' },
 ];
 
 export const newsItem = {
@@ -27,15 +23,9 @@ export const newsItem = {
                     type: ItemTypes.Container,
                     childs: [
                         {
-                            tag: HTMLTags.Span,
-                            type: ItemTypes.Container,
-                            childs: [
-                                {
-                                    tag: 'b',
-                                    type: ItemTypes.Value,
-                                    value: 'Новости'
-                                }
-                            ],
+                            tag: HTMLTags.Bold,
+                            type: ItemTypes.Value,
+                            value: 'Новости'
                         }
                     ],
                 }
@@ -43,6 +33,37 @@ export const newsItem = {
         }
     ]
 };
+
+newsElements.forEach(element => {
+    let item = {
+        tag: HTMLTags.TableRow,
+        type: ItemTypes.Container,
+        childs: [
+            {
+                tag: HTMLTags.TableData,
+                attributes: { class: "news_table_bottom" },
+                type: ItemTypes.Container,
+                childs: [
+                    {
+                        tag: HTMLTags.Span,
+                        attributes: { class: "txt_style_gray" },
+                        type: ItemTypes.Container,
+                        childs: [
+                            {
+                                tag: HTMLTags.Anchor,
+                                attributes: { href: element.link, class: "txt_style_gray" },
+                                type: ItemTypes.Value,
+                                value: '&#8226; ' + element.title
+                            }
+                        ],
+                    }
+                ],
+            }
+        ],
+    }
+
+    newsItem.childs.push(item);
+});
 
 /*
 <table id="tNews" border="0" cellpadding="3" cellspacing="0" width="100%" style="background: #CCCCCC">

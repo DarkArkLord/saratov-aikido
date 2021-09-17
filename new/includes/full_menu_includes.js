@@ -1,5 +1,6 @@
 import { HTMLTags, ItemTypes } from "./render_lib.js";
 import { menuItem } from "./menu_includes.js";
+import { newsItem } from "./news_includes.js";
 import { rambler, hotLog, yandexMetrika } from "./metrika_codes.js";
 
 export const fullMenuItem = {
@@ -13,6 +14,7 @@ export const fullMenuItem = {
             childs: [
                 {
                     tag: HTMLTags.TableData,
+                    attributes: { style: 'padding: 0px 10px 10px 0px' },
                     type: ItemTypes.Container,
                     childs: [menuItem]
                 }
@@ -24,8 +26,9 @@ export const fullMenuItem = {
             childs: [
                 {
                     tag: HTMLTags.TableData,
-                    type: ItemTypes.Value,
-                    value: 'news'
+                    attributes: { style: 'padding: 0px 10px 10px 0px' },
+                    type: ItemTypes.Container,
+                    childs: [newsItem]
                 }
             ],
         },
