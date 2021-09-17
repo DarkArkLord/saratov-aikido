@@ -10,7 +10,7 @@ const rightPageContent = document.getElementById('rightPageContent');
 
 let pageItem = {
     tag: HTMLTags.Table,
-    attributes: { border: "1", cellpadding: "0", cellspacing: "0", width: "100%" },
+    attributes: { border: "0", cellpadding: "0", cellspacing: "0", width: "100%" },
     type: ItemTypes.Container,
     childs: [
         {
@@ -36,7 +36,7 @@ let pageItem = {
                         {
                             tag: HTMLTags.Table,
                             type: ItemTypes.Container,
-                            attributes: { border: "1", cellpadding: "0", cellspacing: "0", width: "100%" },
+                            attributes: { border: "0", cellpadding: "0", cellspacing: "0", width: "100%" },
                             childs: [
                                 {
                                     tag: HTMLTags.TableRow,
