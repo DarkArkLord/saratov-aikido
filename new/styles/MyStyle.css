@@ -2,7 +2,7 @@
 @import url(BlackTxt.css);
 body
 {
-    background-image: url(/pic/fon21.jpg);
+    background-image: url(/pic/background_gardient.jpg);
     background-repeat: repeat-x;
 }
 a:link
@@ -27,7 +27,7 @@ a:active
     background-repeat: no-repeat;
     background-color: #FFFFFF;
     background-position: 100% 100%;
-    background-image: url(/pic/fon-tabl3.gif);
+    background-image: url(/pic/background_characters.gif);
     border: thin dashed #B71822;
 }
 .news_table_bottom
