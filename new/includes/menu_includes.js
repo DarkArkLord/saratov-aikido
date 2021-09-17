@@ -2,26 +2,61 @@ import { HTMLTags, ItemTypes } from "./render_lib.js";
 
 export const menuItem = {
     tag: HTMLTags.Table,
-    // attributes: { border: "0", cellpadding: "0", cellspacing: "0", width: "100%" },
+    attributes: { border: "0", cellpadding: "0", cellspacing: "0", width: "100%" },
     type: ItemTypes.Container,
     childs: [
         {
             tag: HTMLTags.TableRow,
             type: ItemTypes.Container,
-            // attributes: { align: "center" },
             childs: [
                 {
                     tag: HTMLTags.TableData,
-                    // type: ItemTypes.Container,
-                    // attributes: { align: "left", width: '20%' },
-                    // childs: [
-                    //     {
-                    //         tag: HTMLTags.Image,
-                    //         attributes: { src: "/pic/header/header_left.gif", height: '150px' }
-                    //     }
-                    // ],
                     type: ItemTypes.Value,
                     value: 'menu'
+                }
+            ],
+        },
+        {
+            tag: HTMLTags.TableRow,
+            type: ItemTypes.Container,
+            childs: [
+                {
+                    tag: HTMLTags.TableData,
+                    type: ItemTypes.Value,
+                    value: 'news'
+                }
+            ],
+        },
+        {
+            tag: HTMLTags.TableRow,
+            type: ItemTypes.Container,
+            childs: [
+                {
+                    tag: HTMLTags.TableData,
+                    type: ItemTypes.Value,
+                    value: 'rambler'
+                }
+            ],
+        },
+        {
+            tag: HTMLTags.TableRow,
+            type: ItemTypes.Container,
+            childs: [
+                {
+                    tag: HTMLTags.TableData,
+                    type: ItemTypes.Value,
+                    value: 'HotLog'
+                }
+            ],
+        },
+        {
+            tag: HTMLTags.TableRow,
+            type: ItemTypes.Container,
+            childs: [
+                {
+                    tag: HTMLTags.TableData,
+                    type: ItemTypes.Value,
+                    value: 'Yandex.Metrika'
                 }
             ],
         }
