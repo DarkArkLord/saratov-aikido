@@ -1,5 +1,4 @@
 import { HTMLTags, ItemTypes } from "./render_lib.js";
-import { rambler, hotLog, yandexMetrika } from "./metrika_codes.js";
 
 const menuElements = [
     { title: 'Главная', link: '/index.html' },
