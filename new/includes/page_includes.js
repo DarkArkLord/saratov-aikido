@@ -3,7 +3,7 @@ import './head_includes.js';
 import { HTMLTags, ItemTypes, render } from "./render_lib.js";
 import { headerItem } from './header_includes.js';
 import { footerItem } from './footer_includes.js';
-import { menuItem } from './menu_includes.js';
+import { fullMenuItem } from './full_menu_includes.js';
 
 const mainPageContent = document.getElementById('mainPageContent');
 const rightPageContent = document.getElementById('rightPageContent');
@@ -46,7 +46,7 @@ let pageItem = {
                                             tag: HTMLTags.TableData,
                                             type: ItemTypes.Container,
                                             attributes: { width: "20%", align: "left", valign: "top" },
-                                            childs: [menuItem]
+                                            childs: [fullMenuItem]
                                         },
                                         {
                                             tag: HTMLTags.TableData,
@@ -85,3 +85,17 @@ let pageItem = {
 document.body.innerHTML = '';
 let pageElement = render(pageItem);
 document.body.append(pageElement);
+
+(function reloadScripts() {
+    let scripts = document.getElementsByTagName('script');
+    let scriptsList = Array.prototype.slice.call(scripts);
+    scriptsList.forEach(element => {
+        if (element.id !== 'renderPageScript') {
+            let parent = element.parentElement;
+            parent.removeChild(element);
+            let newScript = document.createElement('script');
+            newScript.innerHTML = element.innerHTML;
+            parent.append(newScript);
+        }
+    });
+})();
