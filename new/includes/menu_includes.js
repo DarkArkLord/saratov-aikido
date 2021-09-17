@@ -1,14 +1,32 @@
-import { addElementForParrent, createColumnForParent } from "./dom_functions.js";
+import { HTMLTags, ItemTypes } from "./render_lib.js";
 
-let menuMainElement = document.getElementById('menu');
-menuMainElement = addElementForParrent(menuMainElement, 'td', { width: "100%", align: "left", valign: "top" });
-menuMainElement = addElementForParrent(menuMainElement, 'table', { id: "tAllMenu", border: "0", cellpadding: "0", cellspacing: "0", width: "100%" });
-
-// Menu
-
-let tr = addElementForParrent(menuMainElement, 'tr');
-let td = addElementForParrent(tr, 'td');
-let menuElement = addElementForParrent(td, 'table', { border: "0", cellpadding: "3", cellspacing: "0", width: "100%", style: "background: #CCCCCC" });
+export const menuItem = {
+    tag: HTMLTags.Table,
+    // attributes: { border: "0", cellpadding: "0", cellspacing: "0", width: "100%" },
+    type: ItemTypes.Container,
+    childs: [
+        {
+            tag: HTMLTags.TableRow,
+            type: ItemTypes.Container,
+            // attributes: { align: "center" },
+            childs: [
+                {
+                    tag: HTMLTags.TableData,
+                    // type: ItemTypes.Container,
+                    // attributes: { align: "left", width: '20%' },
+                    // childs: [
+                    //     {
+                    //         tag: HTMLTags.Image,
+                    //         attributes: { src: "/pic/header/header_left.gif", height: '150px' }
+                    //     }
+                    // ],
+                    type: ItemTypes.Value,
+                    value: 'menu'
+                }
+            ],
+        }
+    ]
+}
 
 /*
                                     <td width="100%" align="left" valign="top">
@@ -209,28 +227,28 @@ let menuElement = addElementForParrent(td, 'table', { border: "0", cellpadding: 
                                                 </td>
                                             </tr>
                                             <!-- end rambler -->
-											<tr>
-												<td>
-													 <!-- HotLog -->
-													 <span id="hotlog_counter"></span>
-													 <span id="hotlog_dyn"></span>
-													 <script type="text/javascript">
-													 var hot_s = document.createElement('script');
-													 hot_s.type = 'text/javascript'; hot_s.async = true;
-													 hot_s.src = 'http://js.hotlog.ru/dcounter/2566980.js';
-													 hot_d = document.getElementById('hotlog_dyn');
-													 hot_d.appendChild(hot_s);
-													 </script>
-													 <noscript>
-													 <a href="http://click.hotlog.ru/?2566980" target="_blank"><img
-													 src="http://hit20.hotlog.ru/cgi-bin/hotlog/count?s=2566980&amp;im=466" border="0"
-													 alt="HotLog"></a>
-													 </noscript>
-													 <!-- /HotLog -->
-												</td>
-											</tr>
-											<tr>
-												<td>
+                                            <tr>
+                                                <td>
+                                                     <!-- HotLog -->
+                                                     <span id="hotlog_counter"></span>
+                                                     <span id="hotlog_dyn"></span>
+                                                     <script type="text/javascript">
+                                                     var hot_s = document.createElement('script');
+                                                     hot_s.type = 'text/javascript'; hot_s.async = true;
+                                                     hot_s.src = 'http://js.hotlog.ru/dcounter/2566980.js';
+                                                     hot_d = document.getElementById('hotlog_dyn');
+                                                     hot_d.appendChild(hot_s);
+                                                     </script>
+                                                     <noscript>
+                                                     <a href="http://click.hotlog.ru/?2566980" target="_blank"><img
+                                                     src="http://hit20.hotlog.ru/cgi-bin/hotlog/count?s=2566980&amp;im=466" border="0"
+                                                     alt="HotLog"></a>
+                                                     </noscript>
+                                                     <!-- /HotLog -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -245,8 +263,8 @@ let menuElement = addElementForParrent(td, 'table', { border: "0", cellpadding: 
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/47998934" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-												</td>
-											</tr>
+                                                </td>
+                                            </tr>
                                         </table>
                                     </td>
                                     <td>

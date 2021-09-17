@@ -3,6 +3,7 @@ import './head_includes.js';
 import { HTMLTags, ItemTypes, render } from "./render_lib.js";
 import { headerItem } from './header_includes.js';
 import { footerItem } from './footer_includes.js';
+import { menuItem } from './menu_includes.js';
 
 const mainPageContent = document.getElementById('mainPageContent');
 const rightPageContent = document.getElementById('rightPageContent');
@@ -43,12 +44,14 @@ let pageItem = {
                                     childs: [
                                         {
                                             tag: HTMLTags.TableData,
-                                            type: ItemTypes.Value,
-                                            value: 'menu',
+                                            type: ItemTypes.Container,
+                                            attributes: { width: "20%", align: "left", valign: "top" },
+                                            childs: [menuItem]
                                         },
                                         {
                                             tag: HTMLTags.TableData,
                                             type: ItemTypes.HtmlElementContainer,
+                                            attributes: { width: "100%", align: "left", valign: "top", class: "body_page_style" },
                                             innerElement: mainPageContent
                                         },
                                         {
