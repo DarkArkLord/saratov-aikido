@@ -10,7 +10,7 @@ export const headerItem = {
         {
             tag: HTMLTags.TableRow,
             type: ItemTypes.Container,
-                    attributes: { align: "center" },
+            attributes: { align: "center" },
             childs: [
                 {
                     tag: HTMLTags.TableData,
@@ -37,7 +37,7 @@ export const headerItem = {
                 {
                     tag: HTMLTags.TableData,
                     type: ItemTypes.Container,
-                    attributes: { align: "right",  width: '20%' },
+                    attributes: { align: "right", width: '20%' },
                     childs: [
                         {
                             tag: HTMLTags.Image,
