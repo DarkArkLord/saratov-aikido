@@ -24,8 +24,9 @@ export function addMetaData(parrent, attributes) {
 }
 
 let headElement = document.getElementsByTagName('head')[0];
-addMetaData(headElement, { charset: 'utf-8' });
-addMetaData(headElement, { name: 'description', content: 'Общественная организация по занятиям Айкидо Айкикай в Саратове' });
+// addMetaData(headElement, { charset: 'utf-8' });
+// addMetaData(headElement, { name: 'description', content: 'Общественная организация по занятиям Айкидо Айкикай в Саратове' });
+
 addMetaData(headElement, {
     name: 'keywords',
     content: 'айкидо, саратов, айкидо саратов, клубы айкидо, психологическое айкидо, ' +
@@ -37,5 +38,5 @@ addMetaData(headElement, {
         'Patrick Behezi, aikiken, айкидо для детей, спорт, рукопашный бой, самооборона'
 });
 
-addElement(headElement, 'title', undefined, 'Саратовская Федерация Айкидо Айкикай');
-addElement(headElement, 'link', { rel: 'stylesheet', href: '/styles/MyStyle.css' });
+// addElement(headElement, 'title', undefined, 'Саратовская Федерация Айкидо Айкикай');
+// addElement(headElement, 'link', { rel: 'stylesheet', href: '/styles/MyStyle.css' });
