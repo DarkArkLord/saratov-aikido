@@ -19,7 +19,7 @@ export const newsItem = {
             childs: [
                 {
                     tag: HTMLTags.TableData,
-                    attributes: { align: "center", valign: "top", class: "txt_style_red" },
+                    attributes: { class: "align_center", valign: "top", class: "txt_style_red" },
                     type: ItemTypes.Container,
                     childs: [
                         {

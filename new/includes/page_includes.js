@@ -45,13 +45,13 @@ let pageItem = {
                                         {
                                             tag: HTMLTags.TableData,
                                             type: ItemTypes.Container,
-                                            attributes: { width: "20%", align: "left", valign: "top" },
+                                            attributes: { width: "20%", class: "align_left", valign: "top" },
                                             childs: [fullMenuItem]
                                         },
                                         {
                                             tag: HTMLTags.TableData,
                                             type: ItemTypes.HtmlElementContainer,
-                                            attributes: { width: "100%", align: "left", valign: "top", class: "body_page_style" },
+                                            attributes: { width: "100%", valign: "top", class: "align_left body_page_style" },
                                             innerElement: mainPageContent
                                         },
                                         {
@@ -74,7 +74,7 @@ let pageItem = {
                 {
                     tag: HTMLTags.TableData,
                     type: ItemTypes.Container,
-                    attributes: { height: "20", colspan: "2", align: "right", valign: "bottom" },
+                    attributes: { height: "20", colspan: "2", class: "align_right", valign: "bottom" },
                     childs: [footerItem]
                 }
             ],
@@ -87,9 +87,7 @@ let pageElement = render(pageItem);
 document.body.append(pageElement);
 
 (function reloadScripts() {
-    let scripts = document.getElementsByTagName('script');
-    let scriptsList = Array.prototype.slice.call(scripts);
-    scriptsList.forEach(element => {
+    [...document.getElementsByTagName('script')].forEach(element => {
         if (element.id !== 'renderPageScript') {
             let parent = element.parentElement;
             parent.removeChild(element);

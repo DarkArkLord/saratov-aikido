@@ -10,12 +10,12 @@ export const headerItem = {
         {
             tag: HTMLTags.TableRow,
             type: ItemTypes.Container,
-            attributes: { align: "center" },
+            attributes: { class: "align_center" },
             childs: [
                 {
                     tag: HTMLTags.TableData,
                     type: ItemTypes.Container,
-                    attributes: { align: "left", width: '20%' },
+                    attributes: { class: "align_left", width: '20%' },
                     childs: [
                         {
                             tag: HTMLTags.Image,
@@ -37,7 +37,7 @@ export const headerItem = {
                 {
                     tag: HTMLTags.TableData,
                     type: ItemTypes.Container,
-                    attributes: { align: "right", width: '20%' },
+                    attributes: { class: "align_right", width: '20%' },
                     childs: [
                         {
                             tag: HTMLTags.Image,
