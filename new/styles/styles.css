@@ -1,6 +1,41 @@
+/* 
 @import url(right_img_styles.css);
-@import url(menu_styles.css);
+@import url(menu_styles.css); 
+*/
 
+/* Menu */
+.menu_container {
+    width: 100%;
+    background-color: #CCCCCC;
+}
+
+.nowarp {
+    white-space: nowrap;
+}
+
+/* Right element */
+.height_155px {
+    height: 155px;
+}
+
+#rightPageContent {
+    margin-top: -5px;
+}
+
+/* Text */
+.font_16 {
+    font-size: 16px;
+}
+
+.padding_bottom_8 {
+    padding-bottom: 8px;
+}
+
+.red_string {
+    text-indent: 15px;
+}
+
+/* Common */
 .align_left {
     text-align: left;
 }
@@ -12,7 +47,6 @@
 .align_right {
     text-align: right;
 }
-
 .height_100 {
     height: 100%;
 }
