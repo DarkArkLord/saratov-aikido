@@ -14,7 +14,7 @@ const menuElements = [
 
 export const menuItem = {
     tag: HTMLTags.Table,
-    attributes: { border: "0", cellpadding: "3", cellspacing: "0", width: "100%", style: "background: #CCCCCC" },
+    attributes: { cellpadding: "3", cellspacing: "0", class: "menu_container" },
     type: ItemTypes.Container,
     childs: []
 };
@@ -30,7 +30,7 @@ menuElements.forEach(element => {
                 childs: [
                     {
                         tag: HTMLTags.Span,
-                        attributes: { class: "txt_style" },
+                        attributes: { class: "txt_style nowarp" },
                         type: ItemTypes.Container,
                         childs: [
                             {
