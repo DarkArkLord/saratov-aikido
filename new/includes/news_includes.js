@@ -19,7 +19,7 @@ export const newsItem = {
             childs: [
                 {
                     tag: HTMLTags.TableData,
-                    attributes: { class: "align_center txt_style_red", valign: "top" },
+                    attributes: { class: "align_center color_red font_14" },
                     type: ItemTypes.Container,
                     childs: [
                         {
@@ -41,21 +41,14 @@ newsElements.forEach(element => {
         childs: [
             {
                 tag: HTMLTags.TableData,
-                attributes: { class: "news_table_bottom" },
+                attributes: { class: "news_record" },
                 type: ItemTypes.Container,
                 childs: [
                     {
-                        tag: HTMLTags.Span,
-                        attributes: { class: "txt_style_gray" },
-                        type: ItemTypes.Container,
-                        childs: [
-                            {
-                                tag: HTMLTags.Anchor,
-                                attributes: { href: element.link, class: "txt_style_gray" },
-                                type: ItemTypes.Value,
-                                value: '&#8226; ' + element.title
-                            }
-                        ],
+                        tag: HTMLTags.Anchor,
+                        attributes: { href: element.link, class: "color_gray bold font_14" },
+                        type: ItemTypes.Value,
+                        value: '&#8226; ' + element.title
                     }
                 ],
             }

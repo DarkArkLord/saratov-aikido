@@ -29,17 +29,10 @@ menuElements.forEach(element => {
                 type: ItemTypes.Container,
                 childs: [
                     {
-                        tag: HTMLTags.Span,
-                        attributes: { class: "txt_style nowarp" },
-                        type: ItemTypes.Container,
-                        childs: [
-                            {
-                                tag: HTMLTags.Anchor,
-                                attributes: { href: element.link, class: "txt_style" },
-                                type: ItemTypes.Value,
-                                value: element.title
-                            }
-                        ],
+                        tag: HTMLTags.Anchor,
+                        attributes: { href: element.link, class: "color_black bold nowarp" },
+                        type: ItemTypes.Value,
+                        value: element.title
                     }
                 ],
             }

@@ -1,41 +1,32 @@
-/* 
-@import url(right_img_styles.css);
-@import url(menu_styles.css); 
-*/
+@import url(main_element_styles.css);
+@import url(menu_styles.css);
+@import url(text_styles.css);
 
-/* Menu */
-.menu_container {
-    width: 100%;
-    background-color: #CCCCCC;
-}
+/* Size */
 
-.nowarp {
-    white-space: nowrap;
-}
-
-/* Right element */
 .height_155px {
     height: 155px;
 }
 
-#rightPageContent {
-    margin-top: -5px;
+.height_100 {
+    height: 100%;
 }
 
-/* Text */
-.font_16 {
-    font-size: 16px;
+.width_100 {
+    width: 100%;
 }
 
-.padding_bottom_8 {
-    padding-bottom: 8px;
+.width_60 {
+    width: 60%;
 }
 
-.red_string {
-    text-indent: 15px;
+.width_20 {
+    width: 20%;
 }
+
 
 /* Common */
+
 .align_left {
     text-align: left;
 }
@@ -47,10 +38,19 @@
 .align_right {
     text-align: right;
 }
-.height_100 {
-    height: 100%;
+
+.valign_top {
+    vertical-align: top;
 }
 
-.width_100 {
-    width: 100%;
+.valign_bottom {
+    vertical-align: bottom;
+}
+
+.padding_b_8 {
+    padding-bottom: 8px;
+}
+
+.padding_r_10 {
+    padding-right: 10px;
 }

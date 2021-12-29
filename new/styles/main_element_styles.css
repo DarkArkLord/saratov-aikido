@@ -1,0 +1,35 @@
+body {
+    background-image: url(/pic/background_gardient.jpg);
+    background-repeat: repeat-x;
+    line-height: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #B71822;
+}
+
+.header_height {
+    height: 150px;
+}
+
+#rightPageContent {
+    margin-top: -5px;
+}
+
+.body_page_style {
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    background-position: 100% 100%;
+    background-image: url(/pic/background_characters.gif);
+    border: thin dashed #B71822;
+}

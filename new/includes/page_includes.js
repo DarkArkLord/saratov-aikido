@@ -10,7 +10,7 @@ const rightPageContent = document.getElementById('rightPageContent');
 
 let pageItem = {
     tag: HTMLTags.Table,
-    attributes: { border: "0", cellpadding: "0", cellspacing: "0", width: "100%" },
+    attributes: { border: "0", cellpadding: "0", cellspacing: "0", class: "width_100" },
     type: ItemTypes.Container,
     childs: [
         {
@@ -20,7 +20,7 @@ let pageItem = {
                 {
                     tag: HTMLTags.TableData,
                     type: ItemTypes.Container,
-                    attributes: { width: "100%" },
+                    attributes: { class: "width_100" },
                     childs: [headerItem]
                 }
             ],
@@ -36,7 +36,7 @@ let pageItem = {
                         {
                             tag: HTMLTags.Table,
                             type: ItemTypes.Container,
-                            attributes: { border: "0", cellpadding: "0", cellspacing: "0", width: "100%" },
+                            attributes: { border: "0", cellpadding: "0", cellspacing: "0", class: "width_100" },
                             childs: [
                                 {
                                     tag: HTMLTags.TableRow,
@@ -45,13 +45,13 @@ let pageItem = {
                                         {
                                             tag: HTMLTags.TableData,
                                             type: ItemTypes.Container,
-                                            attributes: { width: "20%", class: "align_left", valign: "top" },
+                                            attributes: { class: "align_left valign_top width_20" },
                                             childs: [fullMenuItem]
                                         },
                                         {
                                             tag: HTMLTags.TableData,
                                             type: ItemTypes.HtmlElementContainer,
-                                            attributes: { width: "100%", valign: "top", class: "align_left body_page_style" },
+                                            attributes: { class: "align_left body_page_style valign_top width_100" },
                                             innerElement: mainPageContent
                                         },
                                         {
@@ -74,7 +74,7 @@ let pageItem = {
                 {
                     tag: HTMLTags.TableData,
                     type: ItemTypes.Container,
-                    attributes: { height: "20", colspan: "2", class: "align_right", valign: "bottom" },
+                    attributes: { height: "20", colspan: "2", class: "align_right valign_bottom" },
                     childs: [footerItem]
                 }
             ],

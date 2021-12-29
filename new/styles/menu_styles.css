@@ -3,6 +3,19 @@
     background-color: #CCCCCC;
 }
 
+.news_record {
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-bottom-color: #999999;
+    border-top-width: thin;
+    border-top-style: solid;
+    border-top-color: #999999;
+}
+
 .nowarp {
     white-space: nowrap;
+}
+
+.padding_rb_10 {
+    padding: 0px 10px 10px 0px;
 }

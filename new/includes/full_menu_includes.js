@@ -5,7 +5,7 @@ import { rambler, hotLog, yandexMetrika } from "./metrika_codes.js";
 
 export const fullMenuItem = {
     tag: HTMLTags.Table,
-    attributes: { border: "0", cellpadding: "0", cellspacing: "0", width: "100%" },
+    attributes: { border: "0", cellpadding: "0", cellspacing: "0", class: "width_100" },
     type: ItemTypes.Container,
     childs: [
         {
@@ -14,7 +14,7 @@ export const fullMenuItem = {
             childs: [
                 {
                     tag: HTMLTags.TableData,
-                    attributes: { style: 'padding: 0px 10px 10px 0px' },
+                    attributes: { class: 'padding_rb_10' },
                     type: ItemTypes.Container,
                     childs: [menuItem]
                 }
@@ -26,7 +26,7 @@ export const fullMenuItem = {
             childs: [
                 {
                     tag: HTMLTags.TableData,
-                    attributes: { style: 'padding: 0px 10px 10px 0px' },
+                    attributes: { class: 'padding_rb_10' },
                     type: ItemTypes.Container,
                     childs: [newsItem]
                 }
