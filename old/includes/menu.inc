@@ -118,8 +118,8 @@
                                                         <tr>
                                                             <td class="news_table_bottom">
                                                                 <span class="txt_style_gray">
-                                                                    <a href="https://vk.com/aikidovsaratove?w=wall-3928256_2089" class="txt_style_gray">
-                                                                        &#8226; Детская летняя школа айкидо в Саратове.
+                                                                    <a href="https://vk.com/wall-3928256_2196" class="txt_style_gray">
+                                                                        &#8226; С Новым 2022 годом!
                                                                     </a>
                                                                 </span>
                                                             </td>
@@ -127,8 +127,8 @@
                                                         <tr>
                                                             <td class="news_table_bottom">
                                                                 <span class="txt_style_gray">
-                                                                    <a href="https://vk.com/wall-3928256_2088" class="txt_style_gray">
-                                                                        &#8226; Экзамен. Май 2021.
+                                                                    <a href="https://vk.com/wall-3928256_2194" class="txt_style_gray">
+                                                                        &#8226; Экзамен. Декабрь 2021.
                                                                     </a>
                                                                 </span>
                                                             </td>

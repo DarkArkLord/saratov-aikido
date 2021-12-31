@@ -2,8 +2,8 @@ import { HTMLTags, ItemTypes } from "./render_lib.js";
 
 const newsElements = [
     { title: 'Приглашаем на занятия по айкидо в "Эверест"!', link: 'https://vk.com/wall-3928256_2143' },
-    { title: 'Детская летняя школа айкидо в Саратове.', link: 'https://vk.com/aikidovsaratove?w=wall-3928256_2089' },
-    { title: 'Экзамен. Май 2021.', link: 'https://vk.com/wall-3928256_2088' },
+    { title: 'С Новым 2022 годом!', link: 'https://vk.com/wall-3928256_2196' },
+    { title: 'Экзамен. Декабрь 2021.', link: 'https://vk.com/wall-3928256_2194' },
     { title: 'Интервью Паскаля Гиймана: отход от дисциплины айкидо.', link: 'http://www.saratov-aikido.ru/pages/DMenu/DAikidoVSaratove/DArchive/DArticles/DInterviewPascal/PInterviewPascal.html' },
     { title: 'Интерактивное обновление новостей', link: 'http://vk.com/aikidovsaratove' },
 ];
