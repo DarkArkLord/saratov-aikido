@@ -49,6 +49,7 @@
                                                                 </span>
                                                             </td>
                                                         </tr>
+                                                        <!--
                                                         <tr>
                                                             <td>
                                                                 <span class="txt_style">
@@ -58,6 +59,7 @@
                                                                 </span>
                                                             </td>
                                                         </tr>
+                                                        -->
                                                         <tr>
                                                             <td>
                                                                 <span class="txt_style">
@@ -109,8 +111,8 @@
                                                         <tr>
                                                             <td class="news_table_bottom">
                                                                 <span class="txt_style_gray">
-                                                                    <a href="https://vk.com/wall-3928256_2143" class="txt_style_gray">
-                                                                        &#8226; Приглашаем на занятия по айкидо в "Эверест"!
+                                                                    <a href="http://www.saratov-aikido.ru/pages/DMenu/DZaliIRasp/PZaliIRasp.html" class="txt_style_gray">
+                                                                        &#8226; Изменение расписания работы залов федерации в 2022!
                                                                     </a>
                                                                 </span>
                                                             </td>
