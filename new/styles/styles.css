@@ -55,6 +55,10 @@
     vertical-align: top;
 }
 
+.valign_middle {
+    vertical-align: middle;
+}
+
 .valign_bottom {
     vertical-align: bottom;
 }
