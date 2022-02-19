@@ -1,4 +1,4 @@
-import { HTMLTags, ItemTypes } from "./render_lib.js";
+import { HTMLTags } from "./htmlTags.js";
 
 const newsElements = [
     { title: 'Приглашаем на занятия по айкидо в "Эверест"!', link: 'https://vk.com/wall-3928256_2143' },
@@ -11,20 +11,16 @@ const newsElements = [
 export const newsItem = {
     tag: HTMLTags.Table,
     attributes: { cellpadding: "3", cellspacing: "0", class: "menu_container" },
-    type: ItemTypes.Container,
     childs: [
         {
             tag: HTMLTags.TableRow,
-            type: ItemTypes.Container,
             childs: [
                 {
                     tag: HTMLTags.TableData,
                     attributes: { class: "align_center color_red font_14" },
-                    type: ItemTypes.Container,
                     childs: [
                         {
                             tag: HTMLTags.Bold,
-                            type: ItemTypes.Value,
                             value: 'Новости'
                         }
                     ],
@@ -37,17 +33,14 @@ export const newsItem = {
 newsElements.forEach(element => {
     let item = {
         tag: HTMLTags.TableRow,
-        type: ItemTypes.Container,
         childs: [
             {
                 tag: HTMLTags.TableData,
                 attributes: { class: "news_record" },
-                type: ItemTypes.Container,
                 childs: [
                     {
                         tag: HTMLTags.Anchor,
                         attributes: { href: element.link, class: "color_gray bold font_14" },
-                        type: ItemTypes.Value,
                         value: '&#8226; ' + element.title
                     }
                 ],

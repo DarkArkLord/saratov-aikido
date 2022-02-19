@@ -1,6 +1,7 @@
 import './head_includes.js';
 
-import { HTMLTags, ItemTypes, render } from "./render_lib.js";
+import { HTMLTags } from "./htmlTags.js";
+import { render } from "./render_lib.js";
 import { headerItem } from './header_includes.js';
 import { footerItem } from './footer_includes.js';
 import { fullMenuItem } from './full_menu_includes.js';
@@ -11,15 +12,12 @@ const rightPageContent = document.getElementById('rightPageContent');
 let pageItem = {
     tag: HTMLTags.Table,
     attributes: { border: "0", cellpadding: "0", cellspacing: "0", class: "width_100" },
-    type: ItemTypes.Container,
     childs: [
         {
             tag: HTMLTags.TableRow,
-            type: ItemTypes.Container,
             childs: [
                 {
                     tag: HTMLTags.TableData,
-                    type: ItemTypes.Container,
                     attributes: { class: "width_100" },
                     childs: [headerItem]
                 }
@@ -27,37 +25,30 @@ let pageItem = {
         },
         {
             tag: HTMLTags.TableRow,
-            type: ItemTypes.Container,
             childs: [
                 {
                     tag: HTMLTags.TableData,
-                    type: ItemTypes.Container,
                     childs: [
                         {
                             tag: HTMLTags.Table,
-                            type: ItemTypes.Container,
                             attributes: { border: "0", cellpadding: "0", cellspacing: "0", class: "width_100" },
                             childs: [
                                 {
                                     tag: HTMLTags.TableRow,
-                                    type: ItemTypes.Container,
                                     childs: [
                                         {
                                             tag: HTMLTags.TableData,
-                                            type: ItemTypes.Container,
                                             attributes: { class: "align_left valign_top width_20" },
                                             childs: [fullMenuItem]
                                         },
                                         {
                                             tag: HTMLTags.TableData,
-                                            type: ItemTypes.HtmlElementContainer,
                                             attributes: { class: "align_left body_page_style valign_top width_100" },
-                                            innerElement: mainPageContent
+                                            childs: [{element: mainPageContent}]
                                         },
                                         {
                                             tag: HTMLTags.TableData,
-                                            type: ItemTypes.HtmlElementContainer,
-                                            innerElement: rightPageContent
+                                            childs: [{element: rightPageContent}]
                                         }
                                     ]
                                 }
@@ -69,11 +60,9 @@ let pageItem = {
         },
         {
             tag: HTMLTags.TableRow,
-            type: ItemTypes.Container,
             childs: [
                 {
                     tag: HTMLTags.TableData,
-                    type: ItemTypes.Container,
                     attributes: { height: "20", colspan: "2", class: "align_right valign_bottom" },
                     childs: [footerItem]
                 }
