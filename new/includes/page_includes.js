@@ -4,7 +4,7 @@ import { HTMLTags } from "./htmlTags.js";
 import { render } from "./render_lib.js";
 import { headerItem } from './header_includes.js';
 import { footerItem } from './footer_includes.js';
-import { fullMenuItem } from './full_menu_includes.js';
+import { fullMenuItem } from './menu_includes.js';
 
 const mainPageContent = document.getElementById('mainPageContent');
 const rightPageContent = document.getElementById('rightPageContent');
