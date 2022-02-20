@@ -5,7 +5,7 @@ export const menuElements = [
     { title: 'Детские группы', link: '/pages/DMenu/DChildren/PChildren.html' },
     { title: 'Залы и расписания', link: '/pages/DMenu/DZaliIRasp/PZaliIRasp.html' },
     // { title: 'Семинары +', link: '/pages/DMenu/DSeminary/PSeminary.html' },
-    { title: 'Аттестации', link: '/pages/DMenu/DAttestation/PAttestation.html' },
+    { title: 'Аттестации +', link: '/pages/DMenu/DAttestation/PAttestation.html' },
     { title: 'Ссылки +', link: '/pages/DMenu/DLinks/PLinks.html' },
     { title: 'Контакты +', link: '/pages/DMenu/DContacts/PContacts.html' },
 ];
