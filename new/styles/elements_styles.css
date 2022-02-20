@@ -33,3 +33,38 @@ a:hover {
     background-image: url(/pic/background_characters.gif);
     border: thin dashed #B71822;
 }
+
+
+/* 
+* Menu 
+*/
+
+.menu_container {
+    width: 100%;
+    background-color: #CCCCCC;
+}
+
+.news_record {
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-bottom-color: #999999;
+    border-top-width: thin;
+    border-top-style: solid;
+    border-top-color: #999999;
+}
+
+.nowarp {
+    white-space: nowrap;
+}
+
+.padding_rb_10 {
+    padding: 0px 10px 10px 0px;
+}
+
+/*
+* History
+*/
+
+.solid_border {
+    border: 1px solid #B71822;
+}

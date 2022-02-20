@@ -1,5 +1,4 @@
-@import url(main_element_styles.css);
-@import url(menu_styles.css);
+@import url(elements_styles.css);
 @import url(text_styles.css);
 
 .times_new_roman {
@@ -32,6 +31,10 @@
     width: 50%;
 }
 
+.width_40 {
+    width: 40%;
+}
+
 .width_20 {
     width: 20%;
 }
@@ -49,6 +52,10 @@
 
 .align_right {
     text-align: right;
+}
+
+.align_justify {
+    text-align: justify;
 }
 
 .valign_top {
