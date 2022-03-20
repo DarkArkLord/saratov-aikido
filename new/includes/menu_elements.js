@@ -11,6 +11,7 @@ export const menuElements = [
 ];
 
 export const newsElements = [
+    { title: 'Детский семинар по айкидо в марте 2022!', link: 'https://vk.com/aikidovsaratove?w=wall-3928256_2212' },
     { title: 'Изменение расписания работы залов федерации в 2022!', link: 'http://www.saratov-aikido.ru/pages/DMenu/DZaliIRasp/PZaliIRasp.html' },
     { title: 'С Новым 2022 годом!', link: 'https://vk.com/wall-3928256_2196' },
     { title: 'Экзамен. Декабрь 2021.', link: 'https://vk.com/wall-3928256_2194' },
