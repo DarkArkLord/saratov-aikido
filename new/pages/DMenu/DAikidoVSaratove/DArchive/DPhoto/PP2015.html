@@ -1,79 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <script src="/jquery/jquery-1.11.1.min.js"></script>
-    <script>
-        $(
-            function () {
-                $("head").load("/includes/inhead.inc")
-            }
-        );
-    </script>
-</head>
-<body>
-<table id="tPage" border="0" cellpadding="0" cellspacing="0" width="100%">
-    <!-- Page -->
-    <tr>
-        <!-- left & center -->
-        <td width="83%">
-            <table id="tlAndR" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <!-- head -->
-                <<tr id="head"></tr>
-                <!-- end head -->
-                <!-- body -->
-                <tr>
-                    <td>
-                        <table id="tMainBody" border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                                <!-- all menu -->
-                                <td id="menu" width="20%" valign="top"></td>
-                                <!-- end all menu -->
-                                <!-- body -->
-                                <td width="100%" align="left" valign="top" class="body_page_style">
-                                    <table id="tBody" border="0" cellpadding="5" cellspacing="0" width="100%">
-                                        <tr>
-                                            <td align="center" class="font_14 bold color_red">
-                                                Фотографии с семинаров и экзаменов. 2015 год.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="font_18 little_bold color_black">
-                                                <a href="https://vk.com/album-3928256_225709460" class="font_18 little_bold color_black">
-                                                    - Семинар Михаила Сафронова в Саратове (19 - 20 декабря 2015) Часть 1.
-                                                </a>
-                                                <br>
-                                                <a href="https://vk.com/album-3928256_225642603" class="font_18 little_bold color_black">
-                                                    - Семинар Михаила Сафронова в Саратове (19 - 20 декабря 2015) Часть 2.
-                                                </a>
-                                                <br>
-                                                <a href="https://vk.com/aikidovsaratove?z=album-3928256_225269311" class="font_18 little_bold color_black">
-                                                    - Экзамен в детском отделении нашей федерации (декабрь 2015)
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <!-- end body -->
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <!-- end body -->
-            </table>
-        </td>
-        <!-- end l & c -->
-        <!-- right -->
-        <td>
-            <div id="right"></div>
-        </td>
-        <!-- end right -->
-    </tr>
-    <!-- end page -->
-</table>
-<!-- creator -->
-<div id="creators" align="right"></div>
-<!-- end creator -->
-</body>
-</html>
 
-<!--  -->
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Общественная организация по занятиям Айкидо Айкикай в Саратове">
+    <title>Саратовская Федерация Айкидо Айкикай</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <meta name="yandex-verification" content="f08dcd3a39242887" />
+</head>
+
+<body>
+    <table id="mainPageContent" cellpadding="5" cellspacing="0" class="width_100">
+        <tr>
+            <td align="center" class="font_14 bold color_red">
+                Фотографии с семинаров и экзаменов. 2015 год.
+            </td>
+        </tr>
+        <tr>
+            <td class="font_18 little_bold color_black">
+                <a href="https://vk.com/album-3928256_225709460" class="font_18 little_bold color_black">
+                    - Семинар Михаила Сафронова в Саратове (19 - 20 декабря 2015) Часть 1.
+                </a>
+                <br>
+                <a href="https://vk.com/album-3928256_225642603" class="font_18 little_bold color_black">
+                    - Семинар Михаила Сафронова в Саратове (19 - 20 декабря 2015) Часть 2.
+                </a>
+                <br>
+                <a href="https://vk.com/aikidovsaratove?z=album-3928256_225269311" class="font_18 little_bold color_black">
+                    - Экзамен в детском отделении нашей федерации (декабрь 2015)
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+<script id='renderPageScript' type="module" src="/includes/page_includes.js"></script>
+
+</html>
