@@ -111,8 +111,8 @@
                                                         <tr>
                                                             <td class="news_table_bottom">
                                                                 <span class="txt_style_gray">
-                                                                    <a href="https://vk.com/aikidovsaratove?w=wall-3928256_2212" class="txt_style_gray">
-                                                                        &#8226; Детский семинар по айкидо в марте 2022!
+                                                                    <a href="https://vk.com/aikidovsaratove?w=wall-3928256_2251" class="txt_style_gray">
+                                                                        &#8226; Экзамены весна 2022!
                                                                     </a>
                                                                 </span>
                                                             </td>
@@ -120,8 +120,8 @@
                                                         <tr>
                                                             <td class="news_table_bottom">
                                                                 <span class="txt_style_gray">
-                                                                    <a href="http://www.saratov-aikido.ru/pages/DMenu/DZaliIRasp/PZaliIRasp.html" class="txt_style_gray">
-                                                                        &#8226; Изменение расписания работы залов федерации в 2022!
+                                                                    <a href="https://vk.com/aikidovsaratove?w=wall-3928256_2212" class="txt_style_gray">
+                                                                        &#8226; Детский семинар по айкидо в марте 2022!
                                                                     </a>
                                                                 </span>
                                                             </td>
@@ -140,15 +140,6 @@
                                                                 <span class="txt_style_gray">
                                                                     <a href="https://vk.com/wall-3928256_2194" class="txt_style_gray">
                                                                         &#8226; Экзамен. Декабрь 2021.
-                                                                    </a>
-                                                                </span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="news_table_bottom">
-                                                                <span class="txt_style_gray">
-                                                                    <a href="http://www.saratov-aikido.ru/pages/DMenu/DAikidoVSaratove/DArchive/DArticles/DInterviewPascal/PInterviewPascal.html" class="txt_style_gray">
-                                                                        &#8226; Интервью Паскаля Гиймана: отход от дисциплины айкидо.
                                                                     </a>
                                                                 </span>
                                                             </td>

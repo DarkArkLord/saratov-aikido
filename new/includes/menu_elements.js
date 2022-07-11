@@ -11,10 +11,9 @@ export const menuElements = [
 ];
 
 export const newsElements = [
+    { title: 'Экзамены весна 2022!', link: 'https://vk.com/aikidovsaratove?w=wall-3928256_2251' },
     { title: 'Детский семинар по айкидо в марте 2022!', link: 'https://vk.com/aikidovsaratove?w=wall-3928256_2212' },
-    { title: 'Изменение расписания работы залов федерации в 2022!', link: 'http://www.saratov-aikido.ru/pages/DMenu/DZaliIRasp/PZaliIRasp.html' },
     { title: 'С Новым 2022 годом!', link: 'https://vk.com/wall-3928256_2196' },
     { title: 'Экзамен. Декабрь 2021.', link: 'https://vk.com/wall-3928256_2194' },
-    { title: 'Интервью Паскаля Гиймана: отход от дисциплины айкидо.', link: 'http://www.saratov-aikido.ru/pages/DMenu/DAikidoVSaratove/DArchive/DArticles/DInterviewPascal/PInterviewPascal.html' },
     { title: 'Интерактивное обновление новостей', link: 'http://vk.com/aikidovsaratove' },
 ];
