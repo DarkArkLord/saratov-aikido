@@ -6,16 +6,12 @@
 -------------------------------------------------------------------------
 Настройка локального сервера
 =========================================================================
-1) Для Apache добавить в httpd.conf:    
+1) Для Apache добавить в httpd.conf:
     - Виртуальный хост:
     ```
     <VirtualHost *:80>
-        ServerName aikido_old.lh
-        DocumentRoot "${SRVROOT}/htdocs/saratov-aikido/old"
-    </VirtualHost>
-    <VirtualHost *:80>
-        ServerName aikido_new.lh
-        DocumentRoot "${SRVROOT}/htdocs/saratov-aikido/new"
+        ServerName aikido.lh
+        DocumentRoot "${SRVROOT}/htdocs/saratov-aikido"
     </VirtualHost>
     ```
     - Добавить поддержку русских символов:
@@ -26,6 +22,5 @@
     - Открыть файл C:\Windows\System32\drivers\etc\hosts
     - Добавить в него: 
     ```
-    127.0.0.1 aikido_new.lh
-    127.0.0.1 aikido_old.lh
+    127.0.0.1 aikido.lh
     ```

@@ -1,0 +1,79 @@
+@import url(elements_styles.css);
+@import url(text_styles.css);
+
+.times_new_roman {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.helvetica {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Size */
+
+.height_155px {
+    height: 155px;
+}
+
+.height_100 {
+    height: 100%;
+}
+
+.width_100 {
+    width: 100%;
+}
+
+.width_60 {
+    width: 60%;
+}
+
+.width_50 {
+    width: 50%;
+}
+
+.width_40 {
+    width: 40%;
+}
+
+.width_20 {
+    width: 20%;
+}
+
+
+/* Common */
+
+.align_left {
+    text-align: left;
+}
+
+.align_center {
+    text-align: center;
+}
+
+.align_right {
+    text-align: right;
+}
+
+.align_justify {
+    text-align: justify;
+}
+
+.valign_top {
+    vertical-align: top;
+}
+
+.valign_middle {
+    vertical-align: middle;
+}
+
+.valign_bottom {
+    vertical-align: bottom;
+}
+
+.padding_b_8 {
+    padding-bottom: 8px;
+}
+
+.padding_r_10 {
+    padding-right: 10px;
+}
