@@ -1,0 +1,23 @@
+{
+  "name": "saratov-aikido",
+  "version": "1.0.0",
+  "description": "saratov aikido site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShadowOfFallenLord/saratov-aikido.git"
+  },
+  "keywords": [
+    "saratov",
+    "aikido"
+  ],
+  "author": "DarkNessLord",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShadowOfFallenLord/saratov-aikido/issues"
+  },
+  "homepage": "https://github.com/ShadowOfFallenLord/saratov-aikido#readme"
+}
