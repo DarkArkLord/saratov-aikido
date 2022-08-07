@@ -1,12 +1,6 @@
-// получаем модуль Express
-const express = require("express");
-// создаем приложение
-const app = express();
- 
-// устанавливаем обработчик для маршрута "/"
-app.get("/", function(request, response){
- 
-    response.end("Hello from Express!");
+const http = require("http");
+http.createServer(function(request, response) {
+    response.end("Hello NodeJS!");
+}).listen(3000, "127.0.0.1", function() {
+    console.log("Сервер начал прослушивание запросов на порту 3000");
 });
-// начинаем прослушивание подключений на 3000 порту
-app.listen(3000);
