@@ -3,55 +3,62 @@ body {
     background-repeat: repeat-x;
 }
 
+#main-container {
+    width: 100vmin;
+    height: 100vmin;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #main-info {
-    width: calc(50vw - 20px - 8px * 2);
-    height: calc(100vh - 15px - 3px - 8px * 2);
+    width: calc(50vmin - 20px - 8px * 2);
+    height: calc(100vmin - 15px - 3px - 8px * 2);
     margin-right: 3px;
     float: left;
 }
 
 #main-info img {
-    margin-top: calc((100vh - 15px - 3px - 8px * 2) / 2 - ((100vh - 15px - 3px - 8px * 2 - 60px) / 3 * 2) / 2);
-    width: calc((50vw - 20px - 8px * 2) / 3 * 2);
-    height: calc((100vh - 15px - 3px - 8px * 2 - 60px) / 3 * 2);
+    margin-top: calc((100vmin - 15px - 3px - 8px * 2) / 2 - ((100vmin - 15px - 3px - 8px * 2 - 60px) / 3 * 2) / 2);
+    width: calc((50vmin - 20px - 8px * 2) / 3 * 2);
+    height: calc((100vmin - 15px - 3px - 8px * 2 - 60px) / 3 * 2);
 }
 
 #halls-and-schedule {
-    width: calc(50vw - 20px - 8px * 2 - 3px);
-    height: calc((100vh - 15px) / 2 - 8px * 2);
+    width: calc(50vmin - 20px - 8px * 2 - 3px);
+    height: calc((100vmin - 15px) / 2 - 8px * 2);
     margin-bottom: 3px;
     float: left;
 }
 
 #halls-and-schedule img {
-    margin-top: calc(((100vh - 15px) / 2 - 8px * 2) / 2 - (((100vh - 15px) / 2 - 8px * 2 - 20px) / 2) / 2);
-    width: calc((50vw - 20px - 8px * 2 - 3px) / 2);
-    height: calc(((100vh - 15px) / 2 - 8px * 2 - 20px) / 2);
+    margin-top: calc(((100vmin - 15px) / 2 - 8px * 2) / 2 - (((100vmin - 15px) / 2 - 8px * 2 - 20px) / 2) / 2);
+    width: calc((50vmin - 20px - 8px * 2 - 3px) / 2);
+    height: calc(((100vmin - 15px) / 2 - 8px * 2 - 20px) / 2);
 }
 
 #vk-news {
-    width: calc(25vw - 11px - 8px * 2 - 2px);
-    height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
+    width: calc(25vmin - 11px - 8px * 2 - 2px);
+    height: calc((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px);
     float: left;
 }
 
 #vk-news img {
-    margin-top: calc((25vw - 11px - 8px * 2 - 2px) / 2 - (((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
-    width: calc((25vw - 11px - 8px * 2 - 2px) / 3);
-    height: calc(((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
+    margin-top: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 2 - (((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
+    width: calc((25vmin - 11px - 8px * 2 - 2px) / 3);
+    height: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
 }
 
 #archive {
-    width: calc(25vw - 11px - 8px * 2 - 2px);
-    height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
+    width: calc(25vmin - 11px - 8px * 2 - 2px);
+    height: calc((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px);
     margin-right: 3px;
     float: left;
 }
 
 #archive img {
-    margin-top: calc(((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 2 - (((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
-    width: calc((25vw - 11px - 8px * 2 - 2px) / 3);
-    height: calc(((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
+    margin-top: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 2 - (((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
+    width: calc((25vmin - 11px - 8px * 2 - 2px) / 3);
+    height: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
 }
 
 .main-page-container-border {
