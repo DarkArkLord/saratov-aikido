@@ -12,6 +12,11 @@
     float: left;
 }
 
+#main-info img {
+    width: calc(50vw - 20px - 8px * 2);
+    height: calc(100vh - 15px - 3px - 8px * 2 - 60px);
+}
+
 #halls-and-schedule {
     width: calc(50vw - 20px - 8px * 2 - 3px);
     height: calc((100vh - 15px) / 2 - 8px * 2);
