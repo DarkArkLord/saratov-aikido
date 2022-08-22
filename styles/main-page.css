@@ -11,9 +11,9 @@ body {
 }
 
 #main-info img {
-    margin-top: calc((100vh - 15px - 3px - 8px * 2) / 2 - (100vh - 15px - 3px - 8px * 2 - 60px) / 3);
-    width: calc((50vw - 20px - 8px * 2) / 3);
-    height: calc((100vh - 15px - 3px - 8px * 2 - 60px) / 3);
+    margin-top: calc((100vh - 15px - 3px - 8px * 2) / 2 - ((100vh - 15px - 3px - 8px * 2 - 60px) / 3 * 2) / 2);
+    width: calc((50vw - 20px - 8px * 2) / 3 * 2);
+    height: calc((100vh - 15px - 3px - 8px * 2 - 60px) / 3 * 2);
 }
 
 #halls-and-schedule {
@@ -25,26 +25,39 @@ body {
 }
 
 #halls-and-schedule img {
-    width: calc(50vw - 20px - 8px * 2 - 3px);
-    height: calc((100vh - 15px) / 2 - 8px * 2 - 20px);
+    margin-top: calc(((100vh - 15px) / 2 - 8px * 2) / 2 - (((100vh - 15px) / 2 - 8px * 2 - 20px) / 2) / 2);
+    width: calc((50vw - 20px - 8px * 2 - 3px) / 2);
+    height: calc(((100vh - 15px) / 2 - 8px * 2 - 20px) / 2);
 }
 
 #vk-news {
-    width: calc(25vw - 11px - 8px * 2 - 2px + 50px);
+    width: calc(25vw - 11px - 8px * 2 - 2px);
     height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
     float: left;
     background-color: blueviolet;
 }
 
+#vk-news img {
+    margin-top: calc((25vw - 11px - 8px * 2 - 2px) / 2 - (((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
+    width: calc((25vw - 11px - 8px * 2 - 2px) / 3);
+    height: calc(((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
+}
+
 #archive {
-    width: calc(25vw - 11px - 8px * 2 - 2px - 50px);
+    width: calc(25vw - 11px - 8px * 2 - 2px);
     height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
     margin-right: 3px;
     float: left;
     background-color: blueviolet;
 }
 
+#archive img {
+    margin-top: calc(((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 2 - (((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
+    width: calc((25vw - 11px - 8px * 2 - 2px) / 3);
+    height: calc(((100vh - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
+}
+
 .main-page-container-border {
-    border: 3px dotted blueviolet;
+    border: 3px dotted red;
     padding: 5px;
 }
