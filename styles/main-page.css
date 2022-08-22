@@ -6,8 +6,9 @@
 }
 
 #main-info img {
-    width: calc(50vw - 20px - 8px * 2);
-    height: calc(100vh - 15px - 3px - 8px * 2 - 60px);
+    margin-top: calc((100vh - 15px - 3px - 8px * 2) / 2 - (100vh - 15px - 3px - 8px * 2 - 60px) / 3);
+    width: calc((50vw - 20px - 8px * 2) / 3);
+    height: calc((100vh - 15px - 3px - 8px * 2 - 60px) / 3);
 }
 
 #halls-and-schedule {
