@@ -24,6 +24,11 @@
     float: left;
 }
 
+#halls-and-schedule img {
+    width: calc(50vw - 20px - 8px * 2 - 3px);
+    height: calc((100vh - 15px) / 2 - 8px * 2 - 20px);
+}
+
 #archive {
     width: calc(25vw - 11px - 8px * 2 - 2px);
     height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
