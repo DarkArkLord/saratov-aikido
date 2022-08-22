@@ -1,0 +1,49 @@
+#header {
+    width: calc(100vw - 25px);
+    height: 150px;
+}
+
+#main-info {
+    width: calc(50vmin - 5px);
+    height: 100vmin;
+    float: left;
+}
+
+#halls-and-schedule {
+    width: calc(50vmin - 5px);
+    float: left;
+}
+
+#archive {
+    width: calc(25vmin - 5px);
+    float: left;
+}
+
+#vk-news {
+    width: calc(25vmin - 5px);
+    float: left;
+}
+
+.width-25 {
+    width: 25%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.container-border {
+    border: 1px solid black;
+}
