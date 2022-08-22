@@ -24,14 +24,14 @@
 }
 
 #archive {
-    width: calc(25vw - 11px - 8px * 2 - 2px);
+    width: calc(25vw - 11px - 8px * 2 - 2px - 50px);
     height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
     margin-right: 3px;
     float: left;
 }
 
 #vk-news {
-    width: calc(25vw - 11px - 8px * 2 - 2px);
+    width: calc(25vw - 11px - 8px * 2 - 2px + 50px);
     height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
     float: left;
 }
