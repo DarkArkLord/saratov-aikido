@@ -21,7 +21,7 @@ s.type = "text/javascript";
 s.async = true;
 s.src =
 (d.location.protocol == "https:" ? "https:" : "http:") +
-"//st.top100.ru/top100/top100.js";
+"/archive//st.top100.ru/top100/top100.js";
 
 if (w.opera == "[object Opera]") {
 d.addEventListener("DOMContentLoaded", f, false);
@@ -29,7 +29,7 @@ d.addEventListener("DOMContentLoaded", f, false);
 })(window, document, "_top100q");
 </script>
 <noscript>
-<img src="//counter.rambler.ru/top100.cnt?pid=5148281" alt="Топ-100" />
+<img src="/archive//counter.rambler.ru/top100.cnt?pid=5148281" alt="Топ-100" />
 </noscript>
 <!-- END Top100 (Kraken) Counter -->`;
 
