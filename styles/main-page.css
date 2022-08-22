@@ -1,26 +1,33 @@
 #header {
     width: calc(100vw - 25px);
-    height: 150px;
+    height: 15vh;
+}
+
+#header * {
+    height: 15vmin;
 }
 
 #main-info {
-    width: calc(50vmin - 5px);
-    height: 100vmin;
+    width: calc(50vw - 20px);
+    height: calc(85vh - 25px);
     float: left;
 }
 
 #halls-and-schedule {
-    width: calc(50vmin - 5px);
+    width: calc(50vw - 20px);
+    height: calc((85vh - 25px) / 2);
     float: left;
 }
 
 #archive {
-    width: calc(25vmin - 5px);
+    width: calc(25vw - 11px);
+    height: calc((85vh - 25px) / 2 - 2px);
     float: left;
 }
 
 #vk-news {
-    width: calc(25vmin - 5px);
+    width: calc(25vw - 11px);
+    height: calc((85vh - 25px) / 2 - 2px);
     float: left;
 }
 
