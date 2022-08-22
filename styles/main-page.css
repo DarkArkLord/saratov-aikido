@@ -1,8 +1,13 @@
+body {
+    background-color: blueviolet;
+}
+
 #main-info {
     width: calc(50vw - 20px - 8px * 2);
     height: calc(100vh - 15px - 3px - 8px * 2);
     margin-right: 3px;
     float: left;
+    background-color: blueviolet;
 }
 
 #main-info img {
@@ -16,6 +21,7 @@
     height: calc((100vh - 15px) / 2 - 8px * 2);
     margin-bottom: 3px;
     float: left;
+    background-color: blueviolet;
 }
 
 #halls-and-schedule img {
@@ -23,15 +29,22 @@
     height: calc((100vh - 15px) / 2 - 8px * 2 - 20px);
 }
 
+#vk-news {
+    width: calc(25vw - 11px - 8px * 2 - 2px + 50px);
+    height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
+    float: left;
+    background-color: blueviolet;
+}
+
 #archive {
     width: calc(25vw - 11px - 8px * 2 - 2px - 50px);
     height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
     margin-right: 3px;
     float: left;
+    background-color: blueviolet;
 }
 
-#vk-news {
-    width: calc(25vw - 11px - 8px * 2 - 2px + 50px);
-    height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
-    float: left;
+.main-page-container-border {
+    border: 3px dotted blueviolet;
+    padding: 5px;
 }
