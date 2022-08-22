@@ -5,62 +5,35 @@
     font-weight: bold;
 }
 
-#header {
-    width: calc(100vw - 25px);
-    height: 15vh;
-}
-
-#header * {
-    height: 15vmin;
-}
-
 #main-info {
     width: calc(50vw - 20px - 8px * 2);
-    height: calc(85vh - 25px - 3px - 8px * 2);
+    height: calc(100vh - 15px - 3px - 8px * 2);
     margin-right: 3px;
     float: left;
 }
 
 #halls-and-schedule {
     width: calc(50vw - 20px - 8px * 2 - 3px);
-    height: calc((85vh - 25px) / 2 - 8px * 2);
+    height: calc((100vh - 15px) / 2 - 8px * 2);
     margin-bottom: 3px;
     float: left;
 }
 
 #archive {
     width: calc(25vw - 11px - 8px * 2 - 2px);
-    height: calc((85vh - 25px) / 2 - 5px - 8px * 2 - 1px);
+    height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
     margin-right: 3px;
     float: left;
-    text-align: center;
 }
 
 #vk-news {
     width: calc(25vw - 11px - 8px * 2 - 2px);
-    height: calc((85vh - 25px) / 2 - 5px - 8px * 2 - 1px);
+    height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
     float: left;
-    text-align: center;
-}
-
-.width-25 {
-    width: 25%;
-}
-
-.width-50 {
-    width: 50%;
-}
-
-.align-left {
-    text-align: left;
 }
 
 .align-center {
     text-align: center;
-}
-
-.align-right {
-    text-align: right;
 }
 
 .container-border {
