@@ -1,5 +1,6 @@
 body {
-    background-color: blueviolet;
+    background-image: url(/pic/background_gardient.jpg);
+    background-repeat: repeat-x;
 }
 
 #main-info {
@@ -7,7 +8,6 @@ body {
     height: calc(100vh - 15px - 3px - 8px * 2);
     margin-right: 3px;
     float: left;
-    background-color: blueviolet;
 }
 
 #main-info img {
@@ -21,7 +21,6 @@ body {
     height: calc((100vh - 15px) / 2 - 8px * 2);
     margin-bottom: 3px;
     float: left;
-    background-color: blueviolet;
 }
 
 #halls-and-schedule img {
@@ -34,7 +33,6 @@ body {
     width: calc(25vw - 11px - 8px * 2 - 2px);
     height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
     float: left;
-    background-color: blueviolet;
 }
 
 #vk-news img {
@@ -48,7 +46,6 @@ body {
     height: calc((100vh - 15px) / 2 - 5px - 8px * 2 - 1px);
     margin-right: 3px;
     float: left;
-    background-color: blueviolet;
 }
 
 #archive img {
