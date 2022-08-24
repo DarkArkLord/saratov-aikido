@@ -1,3 +1,7 @@
+* {
+    font-size: 32px;
+}
+
 :root {
     --size-full: calc(100vmin - 16px);
     --size-half: calc(var(--size-full) / 2);
@@ -22,7 +26,7 @@
     --has-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom));
 
     --has-img-res: calc(1761 / 1698);
-    --has-img-width: calc(var(--has-width) - var(--size-text) * 2);
+    --has-img-width: calc((var(--has-width) - var(--size-text) * 2) / 1.5);
     --has-img-height: calc(var(--has-img-width) / var(--has-img-res));
     --has-img-margin-top: calc(var(--has-height) / 2 - var(--has-img-height) / 2);
 
