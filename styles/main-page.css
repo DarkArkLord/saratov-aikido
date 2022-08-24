@@ -28,20 +28,20 @@ body {
     --has-img-height: 1;
     --has-img-margin-top: 1;
 
-    --vn-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--mi-margin-right));
-    --vn-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom));
-
-    --vn-img-width: 1;
-    --vn-img-height: 1;
-    --vn-img-margin-top: 1;
-
     --arc-margin-right: 3px;
-    --arc-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--arc-margin-right));
+    --arc-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--mi-margin-right));
     --arc-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom));
 
     --arc-img-width: 1;
     --arc-img-height: 1;
     --arc-img-margin-top: 1;
+
+    --vn-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--arc-margin-right));
+    --vn-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom));
+
+    --vn-img-width: 1;
+    --vn-img-height: 1;
+    --vn-img-margin-top: 1;
 }
 
 #main-container {
@@ -77,18 +77,6 @@ body {
     height: calc(((100vmin - 15px) / 2 - 8px * 2 - 20px) / 2);
 }
 
-#vk-news {
-    width: var(--vn-width);
-    height: var(--vn-height);
-    float: left;
-}
-
-#vk-news img {
-    margin-top: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 2 - (((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
-    width: calc((25vmin - 11px - 8px * 2 - 2px) / 3);
-    height: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
-}
-
 #archive {
     width: var(--arc-width);
     height: var(--arc-height);
@@ -97,6 +85,18 @@ body {
 }
 
 #archive img {
+    margin-top: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 2 - (((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
+    width: calc((25vmin - 11px - 8px * 2 - 2px) / 3);
+    height: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
+}
+
+#vk-news {
+    width: var(--vn-width);
+    height: var(--vn-height);
+    float: left;
+}
+
+#vk-news img {
     margin-top: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 2 - (((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
     width: calc((25vmin - 11px - 8px * 2 - 2px) / 3);
     height: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
