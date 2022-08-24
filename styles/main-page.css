@@ -24,24 +24,24 @@ body {
     --has-width: calc(var(--size-half) - var(--border-full) * 2 - var(--mi-margin-right));
     --has-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom));
 
-    --has-img-width: 1;
-    --has-img-height: 1;
-    --has-img-margin-top: 1;
+    --has-img-width: calc(var(--has-width) / 3 * 2);
+    --has-img-height: calc(var(--has-height) / 3 * 2);
+    --has-img-margin-top: calc(var(--has-height) / 2 - var(--has-img-height) / 2);
 
     --arc-margin-right: 3px;
     --arc-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--mi-margin-right));
     --arc-height: calc(var(--size-half) - var(--border-full) * 2);
 
-    --arc-img-width: 1;
-    --arc-img-height: 1;
-    --arc-img-margin-top: 1;
+    --arc-img-width: calc(var(--arc-width) / 3 * 2);
+    --arc-img-height: calc(var(--arc-height) / 3 * 2);
+    --arc-img-margin-top: calc(var(--arc-height) / 2 - var(--arc-img-height) / 2);
 
     --vn-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--arc-margin-right));
     --vn-height: calc(var(--size-half) - var(--border-full) * 2);
 
-    --vn-img-width: 1;
-    --vn-img-height: 1;
-    --vn-img-margin-top: 1;
+    --vn-img-width: calc(var(--vn-width) / 3 * 2);
+    --vn-img-height: calc(var(--vn-height) / 3 * 2);
+    --vn-img-margin-top: calc(var(--vn-height) / 2 - var(--vn-img-height) / 2);
 }
 
 #main-container {
@@ -72,9 +72,9 @@ body {
 }
 
 #halls-and-schedule img {
-    margin-top: calc(((100vmin - 15px) / 2 - 8px * 2) / 2 - (((100vmin - 15px) / 2 - 8px * 2 - 20px) / 2) / 2);
-    width: calc((50vmin - 20px - 8px * 2 - 3px) / 2);
-    height: calc(((100vmin - 15px) / 2 - 8px * 2 - 20px) / 2);
+    margin-top: var(--has-img-margin-top);
+    width: var(--has-img-width);
+    height: var(--has-img-height);
 }
 
 #archive {
@@ -85,9 +85,9 @@ body {
 }
 
 #archive img {
-    margin-top: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 2 - (((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
-    width: calc((25vmin - 11px - 8px * 2 - 2px) / 3);
-    height: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
+    margin-top: var(--arc-img-margin-top);
+    width: var(--arc-img-width);
+    height: var(--arc-img-height);
 }
 
 #vk-news {
@@ -97,9 +97,9 @@ body {
 }
 
 #vk-news img {
-    margin-top: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 2 - (((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3) / 2);
-    width: calc((25vmin - 11px - 8px * 2 - 2px) / 3);
-    height: calc(((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px) / 3);
+    margin-top: var(--vn-img-margin-top);
+    width: var(--vn-img-width);
+    height: var(--vn-img-height);
 }
 
 .main-page-container-border {
