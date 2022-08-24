@@ -4,17 +4,17 @@ body {
 }
 
 :root {
-    --size-full: 100vmin;
-    --size-half: 50vmin;
-    --size-quarter: 25vmin;
+    --size-full: calc(100vmin - 16px);
+    --size-half: calc(var(--size-full) / 2);
+    --size-quarter: calc(var(--size-full) / 4);
 
     --border-size: 3px;
     --border-padding: 5px;
     --border-full: calc(var(--border-size) + var(--border-padding));
 
     --mi-margin-right: 3px;
-    --mi-width: calc(var(--size-half) - var(--border-full) * 2 - 20px);
-    --mi-height: calc(var(--size-full) - var(--border-full) * 2 - 15px - var(--mi-margin-right));
+    --mi-width: calc(var(--size-half) - var(--border-full) * 2 - var(--mi-margin-right));
+    --mi-height: calc(var(--size-full) - var(--border-full) * 2);
 
     --mi-img-width: calc(var(--mi-width) / 3 * 2);
     --mi-img-height: calc(var(--mi-height) / 3 * 2);
@@ -29,7 +29,7 @@ body {
     --has-img-margin-top: 1;
 
     --vn-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--mi-margin-right));
-    --vn-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom) - 15px);
+    --vn-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom));
 
     --vn-img-width: 1;
     --vn-img-height: 1;
@@ -37,7 +37,7 @@ body {
 
     --arc-margin-right: 3px;
     --arc-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--arc-margin-right));
-    --arc-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom) - 15px);
+    --arc-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom));
 
     --arc-img-width: 1;
     --arc-img-height: 1;
