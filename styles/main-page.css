@@ -108,6 +108,11 @@ body {
 }
 
 .main-page-container-border {
+    border: var(--border-size) dotted none;
+    padding: var(--border-padding);
+}
+
+.main-page-container-border:hover {
     border: var(--border-size) dotted red;
     padding: var(--border-padding);
 }
