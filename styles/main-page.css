@@ -108,7 +108,6 @@ body {
 }
 
 .main-page-container-border {
-    border: var(--border-size) dotted none;
     padding: var(--border-padding);
 }
 
