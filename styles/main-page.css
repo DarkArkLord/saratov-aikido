@@ -28,16 +28,16 @@ body {
     --has-img-height: 1;
     --has-img-margin-top: 1;
 
-    --vn-width: 1;
-    --vn-height: 1;
+    --vn-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--mi-margin-right));
+    --vn-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom) - 15px);
 
     --vn-img-width: 1;
     --vn-img-height: 1;
     --vn-img-margin-top: 1;
 
-    --arc-margin-right: 1;
-    --arc-width: 1;
-    --arc-height: 1;
+    --arc-margin-right: 3px;
+    --arc-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--arc-margin-right));
+    --arc-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom) - 15px);
 
     --arc-img-width: 1;
     --arc-img-height: 1;
@@ -78,8 +78,8 @@ body {
 }
 
 #vk-news {
-    width: calc(25vmin - 11px - 8px * 2 - 2px);
-    height: calc((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px);
+    width: var(--vn-width);
+    height: var(--vn-height);
     float: left;
 }
 
@@ -90,8 +90,8 @@ body {
 }
 
 #archive {
-    width: calc(25vmin - 11px - 8px * 2 - 2px);
-    height: calc((100vmin - 15px) / 2 - 5px - 8px * 2 - 1px);
+    width: var(--arc-width);
+    height: var(--arc-height);
     margin-right: 3px;
     float: left;
 }
