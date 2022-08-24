@@ -19,6 +19,29 @@ body {
     --mi-img-width: calc(var(--mi-width) / 3 * 2);
     --mi-img-height: calc(var(--mi-height) / 3 * 2);
     --mi-img-margin-top: calc(var(--mi-height) / 2 - var(--mi-img-height) / 2);
+
+    --has-margin-bottom: 3px;
+    --has-width: calc(var(--size-half) - var(--border-full) * 2 - var(--mi-margin-right));
+    --has-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom));
+
+    --has-img-width: 1;
+    --has-img-height: 1;
+    --has-img-margin-top: 1;
+
+    --vn-width: 1;
+    --vn-height: 1;
+
+    --vn-img-width: 1;
+    --vn-img-height: 1;
+    --vn-img-margin-top: 1;
+
+    --arc-margin-right: 1;
+    --arc-width: 1;
+    --arc-height: 1;
+
+    --arc-img-width: 1;
+    --arc-img-height: 1;
+    --arc-img-margin-top: 1;
 }
 
 #main-container {
@@ -42,9 +65,9 @@ body {
 }
 
 #halls-and-schedule {
-    width: calc(50vmin - 20px - 8px * 2 - 3px);
-    height: calc((100vmin - 15px) / 2 - 8px * 2);
-    margin-bottom: 3px;
+    width: var(--has-width);
+    height: var(--has-height);
+    margin-bottom: var(--has-margin-bottom);
     float: left;
 }
 
