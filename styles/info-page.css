@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+p {
+    text-indent: 15px;
+}
+
+a {
+    color: #B71822;
+}
+
+.color-red {
+    color: #BE1822;
+}
+
+.very-bold {
+    font-weight: 800;
+}
