@@ -16,7 +16,7 @@
     --mi-width: calc(var(--size-half) - var(--border-full) * 2 - var(--mi-margin-right));
     --mi-height: calc(var(--size-full) - var(--border-full) * 2);
 
-    --mi-img-res: calc(1816 / 1733);
+    --mi-img-res: calc(503 / 480);
     --mi-img-width: calc(var(--mi-width) - var(--size-text) * 3);
     --mi-img-height: calc(var(--mi-img-width) / var(--mi-img-res));
     --mi-img-margin-top: calc(var(--mi-height) / 2 - var(--mi-img-height) / 2 - var(--size-text) * 3);
@@ -25,7 +25,7 @@
     --has-width: calc(var(--size-half) - var(--border-full) * 2 - var(--mi-margin-right));
     --has-height: calc(var(--size-half) - var(--border-full) * 2 - var(--has-margin-bottom));
 
-    --has-img-res: calc(1761 / 1698);
+    --has-img-res: calc(311 / 300);
     --has-img-width: calc((var(--has-width) - var(--size-text) * 2) / 1.5);
     --has-img-height: calc(var(--has-img-width) / var(--has-img-res));
     --has-img-margin-top: calc(var(--has-height) / 2 - var(--has-img-height) / 2 - var(--size-text) * 2);
@@ -34,7 +34,7 @@
     --arc-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--mi-margin-right));
     --arc-height: calc(var(--size-half) - var(--border-full) * 2);
 
-    --arc-img-res: calc(519 / 519);
+    --arc-img-res: calc(240 / 240);
     --arc-img-width: calc(var(--arc-width) - var(--size-text));
     --arc-img-height: calc(var(--arc-img-width) / var(--arc-img-res));
     --arc-img-margin-top: calc(var(--arc-height) / 2 - var(--arc-img-height) / 2 - var(--size-text));
@@ -42,7 +42,7 @@
     --vn-width: calc(var(--size-quarter) - var(--border-full) * 2 - var(--arc-margin-right));
     --vn-height: calc(var(--size-half) - var(--border-full) * 2);
 
-    --vn-img-res: calc(1710 / 1707);
+    --vn-img-res: calc(240 / 240);
     --vn-img-width: calc(var(--vn-width) - var(--size-text));
     --vn-img-height: calc(var(--vn-img-width) / var(--vn-img-res));
     --vn-img-margin-top: calc(var(--vn-height) / 2 - var(--vn-img-height) / 2 - var(--size-text));
