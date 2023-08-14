@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Общественная организация по занятиям Айкидо Айкикай в Саратове">
+    <title>Саратовская Федерация Айкидо Айкикай</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/main-page.css">
+    <meta name="yandex-verification" content="f08dcd3a39242887" />
+</head>
+
+<body>
+    <!--
+    <div id="main-container">
+        <a href="info.html" target="_blank" id="main-info" class="main-page-container-border align-center moving">
+            <img src="pic/main/info.jpg">
+            <br>
+            Саратовская Федерация Айкидо Айкикай
+        </a>
+        <a href="https://vk.com/topic-3928256_49163634" target="_blank" id="halls-and-schedule"
+            class="main-page-container-border align-center moving">
+            <img src="pic/main/halls.jpg">
+            <br>
+            Залы и расписание
+        </a>
+        <a href="/archive/index.html" target="_blank" id="archive"
+            class="main-page-container-border align-center moving">
+            <img src="pic/main/archive.jpg">
+            <br>
+            Архив
+        </a>
+        <a href="https://vk.com/wall-3928256_2512" target="_blank" id="vk-news"
+            class="main-page-container-border align-center moving">
+            <img src="pic/main/vk-news.jpg">
+            <br>
+            Новости
+        </a>
+    </div>
+    -->
+
+    <script>
+        const HTMLTags = {
+            Div: 'div',
+            Anchor: 'a',
+            Img: 'img',
+            Br: 'br',
+        }
+
+        function render(tag, attributes, ...childs) {
+            if (tag instanceof Function) {
+                return tag(attributes, ...childs);
+            }
+
+            let element = document.createElement(tag);
+
+            if (attributes) {
+                for (const name in attributes) {
+                    let value = attributes[name];
+                    element.setAttribute(name, value);
+                }
+            }
+
+            for (const child of childs) {
+                (function addChild(parent, child) {
+                    if (Array.isArray(child)) {
+                        for (const innerChild of child) {
+                            addChild(parent, innerChild);
+                        }
+                    } else {
+                        parent.appendChild(
+                            child instanceof HTMLElement
+                                ? child
+                                : document.createTextNode(child)
+                        );
+                    }
+                })(element, child);
+            }
+
+            return element;
+        }
+    </script>
+
+    <script>
+        function randomInt(min, max) {
+            return Math.random() * (max - min + 1) + min | 0;
+        }
+
+        const pageConfig = { movableElements: [], pageSize: {}, };
+
+        function setDefaultPageConfig() {
+            pageConfig.movableElements = [];
+            ['main-container', 'main-info', 'halls-and-schedule', 'archive', 'vk-news'].forEach(key => {
+                const elem = document.getElementById(key);
+                if (elem) {
+                    elem.remove();
+                }
+            });
+
+            document.body.append(render(HTMLTags.Div, { id: 'main-container' },
+                render(HTMLTags.Anchor, { href: 'info.html', target: '_blank', id: 'main-info', class: 'main-page-container-border align-center moving' },
+                    render(HTMLTags.Img, { src: 'pic/main/info.jpg' }),
+                    render(HTMLTags.Br),
+                    'Саратовская Федерация Айкидо Айкикай',
+                ),
+                render(HTMLTags.Anchor, { href: 'https://vk.com/topic-3928256_49163634', target: '_blank', id: 'halls-and-schedule', class: 'main-page-container-border align-center moving' },
+                    render(HTMLTags.Img, { src: 'pic/main/halls.jpg' }),
+                    render(HTMLTags.Br),
+                    'Залы и расписание',
+                ),
+                render(HTMLTags.Anchor, { href: '/archive/index.html', target: '_blank', id: 'archive', class: 'main-page-container-border align-center moving' },
+                    render(HTMLTags.Img, { src: 'pic/main/archive.jpg' }),
+                    render(HTMLTags.Br),
+                    'Архив',
+                ),
+                render(HTMLTags.Anchor, { href: 'https://vk.com/wall-3928256_2512', target: '_blank', id: 'vk-news', class: 'main-page-container-border align-center moving' },
+                    render(HTMLTags.Img, { src: 'pic/main/vk-news.jpg' }),
+                    render(HTMLTags.Br),
+                    'Новости',
+                ),
+            ));
+        }
+
+        function setStartConfig() {
+            setDefaultPageConfig();
+
+            const movableElements = [...document.getElementsByClassName('moving')].map(element => {
+                const pos = element.getBoundingClientRect();
+                return { element, pos, };
+            });
+
+            const mainContainer = document.getElementById('main-container');
+
+            for (const element of movableElements) {
+                // debugger;
+                if (mainContainer) {
+                    mainContainer.removeChild(element.element);
+                    document.body.append(element.element);
+                }
+
+                element.element.style.position = 'absolute';
+                element.element.style.left = element.pos.left + "px";
+                element.element.style.top = element.pos.top + "px";
+            }
+
+            if (mainContainer) {
+                mainContainer.remove();
+            }
+
+            pageConfig.movableElements = movableElements;
+            pageConfig.pageSize = {
+                height: window.innerHeight,
+                width: window.innerWidth,
+            };
+
+            for (const i of movableElements) {
+                const pos = i.pos;
+
+                const widthParts = pageConfig.pageSize.width / pos.width;
+                const heightParts = pageConfig.pageSize.height / pos.height;
+
+                i.element.onmouseover = (event) => {
+                    const mousePos = { x: event.clientX, y: event.clientY, };
+                    const mpIndex = { x: mousePos.x / pos.width | 0, y: mousePos.y / pos.height | 0, };
+
+                    const newPosition = { x: randomInt(0, widthParts), y: randomInt(0, heightParts), };
+                    while (newPosition.x == mpIndex.x && newPosition.y == mpIndex.y) {
+                        newPosition.x = randomInt(0, widthParts);
+                        newPosition.y = randomInt(0, heightParts);
+                    }
+
+                    i.element.style.left = newPosition.x * pos.width + "px";
+                    i.element.style.top = newPosition.y * pos.height + "px";
+                }
+            }
+        }
+
+        setStartConfig();
+
+        window.onresize = setStartConfig;
+    </script>
+
+    <div style="display: none;">
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+                var z = null; m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(47998934, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true,
+                ecommerce: "dataLayer"
+            });
+        </script>
+        <noscript>
+            <div><img src="https://mc.yandex.ru/watch/47998934" style="position:absolute; left:-9999px;" alt="" /></div>
+        </noscript>
+        <!-- /Yandex.Metrika counter -->
+        <!-- Top100 (Kraken) Widget -->
+        <span id="top100_widget"></span>
+        <!-- END Top100 (Kraken) Widget -->
+
+        <!-- Top100 (Kraken) Counter -->
+        <script>
+            (function (w, d, c) {
+                (w[c] = w[c] || []).push(function () {
+                    var options = {
+                        project: 5148281,
+                        element: 'top100_widget',
+                        trackHashes: true,
+                        user_id: null,
+                    };
+                    try {
+                        w.top100Counter = new top100(options);
+                    } catch (e) { }
+                });
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src =
+                    (d.location.protocol == "https:" ? "https:" : "http:") +
+                    "//st.top100.ru/top100/top100.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(window, document, "_top100q");
+        </script>
+        <noscript>
+            <img src="//counter.rambler.ru/top100.cnt?pid=5148281" alt="Топ-100" />
+        </noscript>
+        <!-- END Top100 (Kraken) Counter -->
+
+        <!-- HotLog -->
+        <span id="hotlog_counter"></span>
+        <span id="hotlog_dyn"></span>
+        <script type="text/javascript">
+            var hot_s = document.createElement('script');
+            hot_s.type = 'text/javascript'; hot_s.async = true;
+            hot_s.src = 'http://js.hotlog.ru/dcounter/2566980.js';
+            hot_d = document.getElementById('hotlog_dyn');
+            hot_d.appendChild(hot_s);
+        </script>
+        <noscript>
+            <a href="http://click.hotlog.ru/?2566980" target="_blank"><img
+                    src="http://hit20.hotlog.ru/cgi-bin/hotlog/count?s=2566980&amp;im=466" border="0" alt="HotLog"></a>
+        </noscript>
+        <!-- /HotLog -->
+    </div>
+
+</html>
