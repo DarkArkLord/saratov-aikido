@@ -156,22 +156,28 @@
             for (const i of movableElements) {
                 const pos = i.pos;
 
-                const widthParts = pageConfig.pageSize.width / pos.width;
-                const heightParts = pageConfig.pageSize.height / pos.height;
+                const widthParts = pageConfig.pageSize.width / pos.width | 0;
+                const heightParts = pageConfig.pageSize.height / pos.height | 0;
 
-                i.element.onmouseover = (event) => {
+                function moveElement(event) {
                     const mousePos = { x: event.clientX, y: event.clientY, };
                     const mpIndex = { x: mousePos.x / pos.width | 0, y: mousePos.y / pos.height | 0, };
 
-                    const newPosition = { x: randomInt(0, widthParts), y: randomInt(0, heightParts), };
-                    while (newPosition.x == mpIndex.x && newPosition.y == mpIndex.y) {
-                        newPosition.x = randomInt(0, widthParts);
-                        newPosition.y = randomInt(0, heightParts);
-                    }
+                    const newPosition = { x: -1, y: -1, };
+                    do {
+                        newPosition.x = randomInt(0, widthParts - 1);
+                        newPosition.y = randomInt(0, heightParts - 1);
+                    } while (newPosition.x == mpIndex.x && newPosition.y == mpIndex.y)
+
+                    // console.log(`${i.element.id} (${pos.x / pos.width | 0}/${widthParts}, ${pos.y / pos.height | 0}/${heightParts}) -> (${newPosition.x}, ${newPosition.y})`);
 
                     i.element.style.left = newPosition.x * pos.width + "px";
                     i.element.style.top = newPosition.y * pos.height + "px";
                 }
+
+                i.element.onmouseover = moveElement;
+                i.element.onclick = moveElement;
+                i.element.touchstart = moveElement;
             }
         }
 
