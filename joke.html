@@ -86,6 +86,10 @@
             return Math.random() * (max - min + 1) + min | 0;
         }
 
+        function randomFloat(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
         const pageConfig = { movableElements: [], pageSize: {}, };
 
         function setDefaultPageConfig() {
@@ -132,7 +136,6 @@
             const mainContainer = document.getElementById('main-container');
 
             for (const element of movableElements) {
-                // debugger;
                 if (mainContainer) {
                     mainContainer.removeChild(element.element);
                     document.body.append(element.element);
@@ -154,10 +157,10 @@
             };
 
             for (const i of movableElements) {
-                const pos = i.pos;
                 const elem = i.element;
 
                 function moveElement_byGrid(event) {
+                    const pos = i.pos;
                     const widthParts = pageConfig.pageSize.width / pos.width | 0;
                     const heightParts = pageConfig.pageSize.height / pos.height | 0;
 
@@ -176,11 +179,37 @@
                     elem.style.top = newPosition.y * pos.height + "px";
                 }
 
-                // Добавить смещение на угол
+                function moveElement_toAngle(event) {
+                    const pos = elem.getBoundingClientRect();
+                    const elemCenter = { x: (pos.left + pos.width / 2) | 0, y: (pos.top + pos.height / 2) | 0, };
+                    const mousePos = { x: event.clientX, y: event.clientY, };
 
-                elem.onmouseover = moveElement_byGrid;
-                elem.onclick = moveElement_byGrid;
-                elem.touchstart = moveElement_byGrid;
+                    const toCenterVector = { x: elemCenter.x - mousePos.x, y: elemCenter.y - mousePos.y };
+                    const toCenterVectorLength = Math.sqrt(toCenterVector.x * toCenterVector.x + toCenterVector.y * toCenterVector.y);
+                    const baseASin = Math.asin(toCenterVector.y / toCenterVectorLength);
+                    const baseACos = Math.acos(toCenterVector.x / toCenterVectorLength);
+                    // NOT WORK!
+                    const baseAngle = (baseACos + baseASin) / 2;
+
+                    const angleOffsetBorder = Math.PI / 8;
+                    const angleOffset = 0;//randomFloat(-angleOffsetBorder, angleOffsetBorder);
+                    const newAngle = baseAngle + angleOffset;
+
+                    const lengthMultConfig = { min: 1.1, max: 1.5 };
+                    const lengthMult = 1;//randomFloat(lengthMultConfig.min, lengthMultConfig.max);
+                    const newLength = toCenterVectorLength * lengthMult;
+
+                    const elementOffsetVector = { x: newLength * Math.cos(newAngle), y: newLength * Math.sin(newAngle), };
+                    debugger;
+                    console.log(`${JSON.stringify(toCenterVector)} -(asin:${baseASin}, acos:${baseACos})> ${JSON.stringify(elementOffsetVector)}`);
+
+                    elem.style.left = pos.left + elementOffsetVector.x + "px";
+                    elem.style.top = pos.top + elementOffsetVector.y + "px";
+                }
+
+                elem.onmouseover = moveElement_toAngle;
+                elem.onclick = moveElement_toAngle;
+                elem.touchstart = moveElement_toAngle;
             }
         }
 
