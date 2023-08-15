@@ -190,8 +190,17 @@
                     const yMult = randomFloat(lengthMultConfig.min, lengthMultConfig.max);
                     const elementOffsetVector = { x: toCenterVector.x * xMult, y: toCenterVector.y * yMult, };
 
-                    elem.style.left = pos.left + elementOffsetVector.x + "px";
-                    elem.style.top = pos.top + elementOffsetVector.y + "px";
+                    if (pos.left + elementOffsetVector.x < 0 || pos.left + elementOffsetVector.x + pos.width > pageConfig.pageSize.width) {
+                        elem.style.left = pos.left - elementOffsetVector.x + "px";
+                    } else {
+                        elem.style.left = pos.left + elementOffsetVector.x + "px";
+                    }
+
+                    if (pos.top + elementOffsetVector.y < 0 || pos.top + elementOffsetVector.y + pos.height > pageConfig.pageSize.height) {
+                        elem.style.top = pos.top - elementOffsetVector.y + "px";
+                    } else {
+                        elem.style.top = pos.top + elementOffsetVector.y + "px";
+                    }
                 }
 
                 elem.onmouseover = moveElement_toSide;
