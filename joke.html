@@ -228,15 +228,90 @@
                     elem.style.top = pos.top + finalOffsets.y + "px";
                 }
 
-                elem.onmouseover = moveElement_toSide;
-                elem.onclick = moveElement_toSide;
-                elem.touchstart = moveElement_toSide;
+                function moveElement_byTriangle(event) {
+                    const pos = elem.getBoundingClientRect();
+                    const mousePos = { x: event.clientX, y: event.clientY, };
+
+                    const elemCenter = { x: (pos.left + pos.width / 2) | 0, y: (pos.top + pos.height / 2) | 0, };
+                    const toCenterVector = { x: elemCenter.x - mousePos.x, y: elemCenter.y - mousePos.y };
+
+                    const commonOffset = 5;
+                    const sideOffsets = {
+                        left: mousePos.x - pos.left + commonOffset,
+                        right: mousePos.x - pos.right - commonOffset,
+                        top: mousePos.y - pos.top + commonOffset,
+                        bottom: mousePos.y - pos.bottom - commonOffset,
+                    };
+
+                    // Базовый вектор смещения объекта для выведения мыши вовне
+                    const baseOffsets = { x: 0, y: 0, };
+                    if (Math.abs(toCenterVector.x) > Math.abs(toCenterVector.y)) {
+                        // Horizontal
+                        if (toCenterVector.x > 0) {
+                            // Left
+                            baseOffsets.x = sideOffsets.left;
+                            baseOffsets.y = toCenterVector.y * sideOffsets.left / toCenterVector.x;
+                        } else {
+                            // Right
+                            baseOffsets.x = sideOffsets.right;
+                            baseOffsets.y = toCenterVector.y * sideOffsets.right / toCenterVector.x;
+                        }
+                    } else {
+                        // Vertical
+                        if (toCenterVector.y > 0) {
+                            // Top
+                            baseOffsets.x = toCenterVector.x * sideOffsets.top / toCenterVector.y;
+                            baseOffsets.y = sideOffsets.top;
+                        } else {
+                            // Bottom
+                            baseOffsets.x = toCenterVector.x * sideOffsets.bottom / toCenterVector.y;
+                            baseOffsets.y = sideOffsets.bottom;
+                        }
+                    }
+
+                    // Введение случайного множителя
+                    const offsetMultConfig = { min: 1.0, max: 1.5, };
+                    const offsetMults = {
+                        main: randomFloat(offsetMultConfig.min, offsetMultConfig.max),
+                        common: randomFloat(offsetMultConfig.min, offsetMultConfig.max) / 2,
+                    };
+                    const multipledOffset = { x: 0, y: 0, };
+                    if (Math.abs(toCenterVector.x) > Math.abs(toCenterVector.y)) {
+                        multipledOffset.x = Math.round(baseOffsets.x * offsetMults.main);
+                        multipledOffset.y = Math.round(baseOffsets.y * offsetMults.common);
+                    } else {
+                        multipledOffset.x = Math.round(baseOffsets.x * offsetMults.common);
+                        multipledOffset.y = Math.round(baseOffsets.y * offsetMults.main);
+                    }
+
+                    // Обработка границ страницы
+                    const borderedOffset = { x: 0, y: 0, };
+                    if (pos.left + multipledOffset.x > 0 && pos.right + multipledOffset.x < pageConfig.pageSize.width) {
+                        borderedOffset.x = multipledOffset.x;
+                    } else {
+                        borderedOffset.x = -toCenterVector.x * 2 - multipledOffset.x;
+                    }
+
+                    if (pos.top + multipledOffset.y > 0 && pos.bottom + multipledOffset.y < pageConfig.pageSize.height) {
+                        borderedOffset.y = multipledOffset.y;
+                    } else {
+                        borderedOffset.y = -toCenterVector.y * 2 - multipledOffset.y;
+                    }
+
+                    debugger;
+                    elem.style.left = pos.left + borderedOffset.x + "px";
+                    elem.style.top = pos.top + borderedOffset.y + "px";
+                }
+
+                elem.onmouseover = moveElement_byTriangle;
+                elem.onclick = moveElement_byTriangle;
+                elem.touchstart = moveElement_byTriangle;
             }
         }
 
         setStartConfig();
 
-        // window.onresize = setStartConfig;
+        window.onresize = setStartConfig;
     </script>
 
     <div style="display: none;">
