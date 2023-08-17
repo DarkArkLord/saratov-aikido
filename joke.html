@@ -180,27 +180,59 @@
                 }
 
                 function moveElement_toSide(event) {
-                    const pos = elem.getBoundingClientRect();
-                    const elemCenter = { x: (pos.left + pos.width / 2) | 0, y: (pos.top + pos.height / 2) | 0, };
+                    let isMouseInElement, pos = elem.getBoundingClientRect();
                     const mousePos = { x: event.clientX, y: event.clientY, };
+                    do {
+                        const elemCenter = { x: (pos.left + pos.width / 2) | 0, y: (pos.top + pos.height / 2) | 0, };
+                        const toCenterVector = { x: elemCenter.x - mousePos.x, y: elemCenter.y - mousePos.y };
+                        const commonOffset = 5;
 
-                    const toCenterVector = { x: elemCenter.x - mousePos.x, y: elemCenter.y - mousePos.y };
-                    const lengthMultConfig = { min: 1.1, max: 1.5 };
-                    const xMult = randomFloat(lengthMultConfig.min, lengthMultConfig.max);
-                    const yMult = randomFloat(lengthMultConfig.min, lengthMultConfig.max);
-                    const elementOffsetVector = { x: toCenterVector.x * xMult, y: toCenterVector.y * yMult, };
+                        const baseOffsets = {
+                            left: mousePos.x - pos.left + commonOffset,
+                            right: pos.right - mousePos.x + commonOffset,
+                            top: mousePos.y - pos.top + commonOffset,
+                            bottom: pos.bottom - mousePos.y + commonOffset,
+                        };
+                        const offsets = {
+                            x: toCenterVector.x > 0 ? baseOffsets.left : -baseOffsets.right,
+                            y: toCenterVector.y > 0 ? baseOffsets.top : -baseOffsets.bottom,
+                        };
 
-                    if (pos.left + elementOffsetVector.x < 0 || pos.left + elementOffsetVector.x + pos.width > pageConfig.pageSize.width) {
-                        elem.style.left = pos.left - elementOffsetVector.x + "px";
-                    } else {
-                        elem.style.left = pos.left + elementOffsetVector.x + "px";
-                    }
+                        const offsetMultConfig = { main: { min: 1.1, max: 1.5 }, common: { min: 0.1, max: 0.5 }, };
+                        const mainMult = randomFloat(offsetMultConfig.main.min, offsetMultConfig.main.max);
+                        const commonMult = randomFloat(offsetMultConfig.common.min, offsetMultConfig.common.max);
+                        if (Math.abs(offsets.x) < Math.abs(offsets.y)) {
+                            offsets.x *= mainMult;
+                            offsets.y *= commonMult;
+                        } else {
+                            offsets.x *= commonMult;
+                            offsets.y *= mainMult;
+                        }
+                        debugger;
+                        let newPos = { left: 0, right: 0, width: pos.width, top: 0, bottom: 0, height: pos.height, };
+                        if (pos.left + offsets.x > 0 && pos.right + offsets.x < pageConfig.pageSize.width) {
+                            newPos.left = pos.left + offsets.x
 
-                    if (pos.top + elementOffsetVector.y < 0 || pos.top + elementOffsetVector.y + pos.height > pageConfig.pageSize.height) {
-                        elem.style.top = pos.top - elementOffsetVector.y + "px";
-                    } else {
-                        elem.style.top = pos.top + elementOffsetVector.y + "px";
-                    }
+                        } else {
+                            newPos.left = pos.left - toCenterVector.x - offsets.x;
+                        }
+
+                        if (pos.top + offsets.y > 0 && pos.bottom + offsets.y < pageConfig.pageSize.height) {
+                            newPos.top = pos.top + offsets.y;
+                        } else {
+                            newPos.top = pos.top - toCenterVector.y - offsets.y;
+                        }
+
+                        elem.style.left = newPos.left + "px";
+                        elem.style.top = newPos.top + "px";
+
+                        newPos.right = newPos.left + newPos.width;
+                        newPos.bottom = newPos.top + newPos.height;
+                        pos = newPos;
+
+                        isMouseInElement = newPos.left <= mousePos.x && mousePos.x <= newPos.right
+                            && newPos.top <= mousePos.y && mousePos.y <= newPos.bottom;
+                    } while (false);
                 }
 
                 elem.onmouseover = moveElement_toSide;
@@ -211,7 +243,7 @@
 
         setStartConfig();
 
-        window.onresize = setStartConfig;
+        // window.onresize = setStartConfig;
     </script>
 
     <div style="display: none;">
