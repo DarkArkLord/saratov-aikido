@@ -232,7 +232,7 @@
 
                         isMouseInElement = newPos.left <= mousePos.x && mousePos.x <= newPos.right
                             && newPos.top <= mousePos.y && mousePos.y <= newPos.bottom;
-                    } while (false);
+                    } while (isMouseInElement);
                 }
 
                 elem.onmouseover = moveElement_toSide;
