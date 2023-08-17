@@ -198,9 +198,9 @@
                             y: toCenterVector.y > 0 ? baseOffsets.top : -baseOffsets.bottom,
                         };
 
-                        const offsetMultConfig = { main: { min: 1.1, max: 1.5 }, common: { min: 0.1, max: 0.5 }, };
-                        const mainMult = randomFloat(offsetMultConfig.main.min, offsetMultConfig.main.max);
-                        const commonMult = randomFloat(offsetMultConfig.common.min, offsetMultConfig.common.max);
+                        const offsetMultConfig = { main: { min: 1.1, max: 1.5 }, common: { min: 1.1, max: 1.5 }, };
+                        const mainMult = 1;//randomFloat(offsetMultConfig.main.min, offsetMultConfig.main.max);
+                        const commonMult = 1;//randomFloat(offsetMultConfig.common.min, offsetMultConfig.common.max);
                         if (Math.abs(offsets.x) < Math.abs(offsets.y)) {
                             offsets.x *= mainMult;
                             offsets.y *= commonMult;
@@ -211,16 +211,15 @@
                         debugger;
                         let newPos = { left: 0, right: 0, width: pos.width, top: 0, bottom: 0, height: pos.height, };
                         if (pos.left + offsets.x > 0 && pos.right + offsets.x < pageConfig.pageSize.width) {
-                            newPos.left = pos.left + offsets.x
-
+                            newPos.left = pos.left + offsets.x | 0;
                         } else {
-                            newPos.left = pos.left - toCenterVector.x - offsets.x;
+                            newPos.left = pos.left - toCenterVector.x - offsets.x | 0;
                         }
 
                         if (pos.top + offsets.y > 0 && pos.bottom + offsets.y < pageConfig.pageSize.height) {
-                            newPos.top = pos.top + offsets.y;
+                            newPos.top = pos.top + offsets.y | 0;
                         } else {
-                            newPos.top = pos.top - toCenterVector.y - offsets.y;
+                            newPos.top = pos.top - toCenterVector.y - offsets.y | 0;
                         }
 
                         elem.style.left = newPos.left + "px";
