@@ -178,8 +178,6 @@
                         newPosIndex.y = randomInt(0, heightParts - 1);
                     } while (newPosIndex.x == mpIndex.x && newPosIndex.y == mpIndex.y)
 
-                    // console.log(`${elem.id} (${pos.x / pos.width | 0}/${widthParts}, ${pos.y / pos.height | 0}/${heightParts}) -> (${newPosition.x}, ${newPosition.y})`);
-
                     const newPos = {
                         x: newPosIndex.x * pos.width | 0,
                         y: newPosIndex.y * pos.height | 0,
@@ -191,6 +189,7 @@
                     return false;
                 }
 
+                // Не используется
                 function moveElement_byTriangle(event) {
                     const pos = elem.getBoundingClientRect();
                     const mousePos = { x: event.clientX, y: event.clientY, };
