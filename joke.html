@@ -290,15 +290,27 @@
                         borderedOffset.x = multipledOffset.x;
                     } else {
                         borderedOffset.x = -toCenterVector.x * 2 - multipledOffset.x;
+                        if (Math.abs(toCenterVector.x) < Math.abs(toCenterVector.y)) {
+                            while (pos.left + borderedOffset.x <= 0 || pos.right + borderedOffset.x >= pageConfig.pageSize.width) {
+                                borderedOffset.x = Math.round(borderedOffset.x / 2);
+                            }
+                        }
                     }
 
                     if (pos.top + multipledOffset.y > 0 && pos.bottom + multipledOffset.y < pageConfig.pageSize.height) {
                         borderedOffset.y = multipledOffset.y;
                     } else {
                         borderedOffset.y = -toCenterVector.y * 2 - multipledOffset.y;
+                        if (Math.abs(toCenterVector.x) > Math.abs(toCenterVector.y)) {
+                            while (pos.top + borderedOffset.y <= 0 || pos.bottom + borderedOffset.y >= pageConfig.pageSize.height) {
+                                borderedOffset.y = Math.round(borderedOffset.y / 2);
+                            }
+                        }
                     }
 
-                    debugger;
+                    // Добавить проверку на смещение в неосновном направлении,
+                    // если в основном и обратном основном не умещается
+
                     elem.style.left = pos.left + borderedOffset.x + "px";
                     elem.style.top = pos.top + borderedOffset.y + "px";
                 }
