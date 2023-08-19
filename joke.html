@@ -177,6 +177,8 @@
 
                     elem.style.left = newPosition.x * pos.width + "px";
                     elem.style.top = newPosition.y * pos.height + "px";
+
+                    return false;
                 }
 
                 function moveElement_toSide(event) {
@@ -226,6 +228,8 @@
 
                     elem.style.left = pos.left + finalOffsets.x + "px";
                     elem.style.top = pos.top + finalOffsets.y + "px";
+
+                    return false;
                 }
 
                 function moveElement_byTriangle(event) {
@@ -329,9 +333,9 @@
                     return false;
                 }
 
-                elem.onmouseover = moveElement_byTriangle;
-                elem.onclick = moveElement_byTriangle;
-                elem.touchstart = moveElement_byTriangle;
+                elem.onmouseover = moveElement_byGrid;
+                elem.onclick = moveElement_byGrid;
+                elem.touchstart = moveElement_byGrid;
             }
         }
 
