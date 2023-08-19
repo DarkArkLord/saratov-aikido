@@ -182,58 +182,7 @@
 
                     return false;
                 }
-
-                function moveElement_toSide(event) {
-                    const pos = elem.getBoundingClientRect();
-                    const mousePos = { x: event.clientX, y: event.clientY, };
-                    const elemCenter = { x: (pos.left + pos.width / 2) | 0, y: (pos.top + pos.height / 2) | 0, };
-                    const toCenterVector = { x: elemCenter.x - mousePos.x, y: elemCenter.y - mousePos.y };
-                    const commonOffset = 5;
-
-                    const baseOffsets = {
-                        left: mousePos.x - pos.left + commonOffset,
-                        right: pos.right - mousePos.x + commonOffset,
-                        top: mousePos.y - pos.top + commonOffset,
-                        bottom: pos.bottom - mousePos.y + commonOffset,
-                    };
-                    const offsets = {
-                        x: toCenterVector.x > 0 ? baseOffsets.left : -baseOffsets.right,
-                        y: toCenterVector.y > 0 ? baseOffsets.top : -baseOffsets.bottom,
-                    };
-
-                    const offsetMultConfig = { min: 1.0, max: 1.5, };
-                    const offsetMults = {
-                        main: randomFloat(offsetMultConfig.min, offsetMultConfig.max),
-                        common: randomFloat(offsetMultConfig.min, offsetMultConfig.max) / 2,
-                    };
-                    const multipledOffsets = { x: 0, y: 0 };
-                    if (Math.abs(offsets.x) < Math.abs(offsets.y)) {
-                        multipledOffsets.x = offsets.x * offsetMults.main | 0;
-                        multipledOffsets.y = offsets.y * offsetMults.common | 0;
-                    } else {
-                        multipledOffsets.x = offsets.x * offsetMults.common | 0;
-                        multipledOffsets.y = offsets.y * offsetMults.main | 0;
-                    }
-
-                    const finalOffsets = { x: 0, y: 0 };
-                    if (pos.left + multipledOffsets.x > 0 && pos.right + multipledOffsets.x < pageConfig.pageSize.width) {
-                        finalOffsets.x = multipledOffsets.x;
-                    } else {
-                        finalOffsets.x = -toCenterVector.x - multipledOffsets.x;
-                    }
-
-                    if (pos.top + multipledOffsets.y > 0 && pos.bottom + multipledOffsets.y < pageConfig.pageSize.height) {
-                        finalOffsets.y = multipledOffsets.y;
-                    } else {
-                        finalOffsets.y = -toCenterVector.y - multipledOffsets.y;
-                    }
-
-                    elem.style.left = pos.left + finalOffsets.x + "px";
-                    elem.style.top = pos.top + finalOffsets.y + "px";
-
-                    return false;
-                }
-
+                
                 function moveElement_byTriangle(event) {
                     const pos = elem.getBoundingClientRect();
                     const mousePos = { x: event.clientX, y: event.clientY, };
