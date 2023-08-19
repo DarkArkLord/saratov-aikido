@@ -90,6 +90,7 @@
             return Math.random() * (max - min) + min;
         }
 
+        const notDigitRegex = /[^-.0123456789]/g;
         const pageConfig = { movableElements: [], pageSize: {}, };
 
         function setDefaultPageConfig() {
@@ -160,7 +161,8 @@
                 const elem = i.element;
 
                 function moveElement_byGrid(event) {
-                    const pos = i.pos;
+                    const pos = elem.getBoundingClientRect();
+
                     const widthParts = pageConfig.pageSize.width / pos.width | 0;
                     const heightParts = pageConfig.pageSize.height / pos.height | 0;
 
