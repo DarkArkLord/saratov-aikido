@@ -134,28 +134,30 @@
                 return { element, pos, };
             });
 
-            const mainContainer = document.getElementById('main-container');
+            (function clearContainers() {
+                const mainContainer = document.getElementById('main-container');
 
-            for (const element of movableElements) {
-                if (mainContainer) {
-                    mainContainer.removeChild(element.element);
-                    document.body.append(element.element);
+                for (const element of movableElements) {
+                    if (mainContainer) {
+                        mainContainer.removeChild(element.element);
+                        document.body.append(element.element);
+                    }
+
+                    element.element.style.position = 'absolute';
+                    element.element.style.left = element.pos.left + "px";
+                    element.element.style.top = element.pos.top + "px";
                 }
 
-                element.element.style.position = 'absolute';
-                element.element.style.left = element.pos.left + "px";
-                element.element.style.top = element.pos.top + "px";
-            }
+                if (mainContainer) {
+                    mainContainer.remove();
+                }
 
-            if (mainContainer) {
-                mainContainer.remove();
-            }
-
-            pageConfig.movableElements = movableElements;
-            pageConfig.pageSize = {
-                height: window.innerHeight,
-                width: window.innerWidth,
-            };
+                pageConfig.movableElements = movableElements;
+                pageConfig.pageSize = {
+                    height: window.innerHeight,
+                    width: window.innerWidth,
+                };
+            })();
 
             for (const i of movableElements) {
                 const elem = i.element;
@@ -182,7 +184,7 @@
 
                     return false;
                 }
-                
+
                 function moveElement_byTriangle(event) {
                     const pos = elem.getBoundingClientRect();
                     const mousePos = { x: event.clientX, y: event.clientY, };
