@@ -313,6 +313,8 @@
 
                     elem.style.left = pos.left + borderedOffset.x + "px";
                     elem.style.top = pos.top + borderedOffset.y + "px";
+
+                    return false;
                 }
 
                 elem.onmouseover = moveElement_byTriangle;
