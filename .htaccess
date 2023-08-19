@@ -2,6 +2,11 @@ DirectoryIndex index.html
 AddDefaultCharset utf-8
 ErrorDocument 404 /Error404.html
 
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ /$1.html [L]
+
 RemoveHandler .php
 RemoveType .php
 AddType application/x-httpd-php-source .php .cgi .pl .fcgi .fpl .phtml .shtml .php2 .php3 .php4 .php5 .asp .jsp
