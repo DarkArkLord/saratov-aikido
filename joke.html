@@ -159,6 +159,12 @@
                 };
             })();
 
+            function moveElementToVector(element, offset) {
+                const startPosition = element.getBoundingClientRect();
+                element.style.left = startPosition.left + offset.x + "px";
+                element.style.top = startPosition.top + offset.y + "px";
+            }
+
             for (const i of movableElements) {
                 const elem = i.element;
 
@@ -171,16 +177,23 @@
                     const mousePos = { x: event.clientX, y: event.clientY, };
                     const mpIndex = { x: mousePos.x / pos.width | 0, y: mousePos.y / pos.height | 0, };
 
-                    const newPosition = { x: -1, y: -1, };
+                    const newPosIndex = { x: -1, y: -1, };
                     do {
-                        newPosition.x = randomInt(0, widthParts - 1);
-                        newPosition.y = randomInt(0, heightParts - 1);
-                    } while (newPosition.x == mpIndex.x && newPosition.y == mpIndex.y)
+                        newPosIndex.x = randomInt(0, widthParts - 1);
+                        newPosIndex.y = randomInt(0, heightParts - 1);
+                    } while (newPosIndex.x == mpIndex.x && newPosIndex.y == mpIndex.y)
 
                     // console.log(`${elem.id} (${pos.x / pos.width | 0}/${widthParts}, ${pos.y / pos.height | 0}/${heightParts}) -> (${newPosition.x}, ${newPosition.y})`);
 
-                    elem.style.left = newPosition.x * pos.width + "px";
-                    elem.style.top = newPosition.y * pos.height + "px";
+                    const newPos = {
+                        x: newPosIndex.x * pos.width,
+                        y: newPosIndex.y * pos.height,
+                    };
+                    const offset = {
+                        x: newPos.x - pos.left,
+                        y: newPos.y - pos.top,
+                    };
+                    moveElementToVector(elem, offset);
 
                     return false;
                 }
@@ -280,8 +293,9 @@
                     // Добавить проверку на смещение в неосновном направлении,
                     // если в основном и обратном основном не умещается?
 
-                    elem.style.left = pos.left + borderedOffset.x + "px";
-                    elem.style.top = pos.top + borderedOffset.y + "px";
+                    moveElementToVector(elem, borderedOffset);
+                    // elem.style.left = pos.left + borderedOffset.x + "px";
+                    // elem.style.top = pos.top + borderedOffset.y + "px";
 
                     return false;
                 }
