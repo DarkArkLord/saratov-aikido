@@ -1,0 +1,35 @@
+:root {
+    --size-full: calc(100vmin - 16px);
+
+    --border-size: 3px;
+    --border-padding: 5px;
+    --border-full: calc(var(--border-size) + var(--border-padding));
+
+    --m-margin-right: 3px;
+    --m-width: calc(var(--size-full) - var(--border-full) * 2 - var(--m-margin-right));
+    --m-height: calc(var(--size-full) - var(--border-full) * 2);
+
+    --img-res: calc(2069 / 2560);
+    --img-width: calc(var(--m-width));
+    --img-height: calc(var(--img-width) / var(--img-res));
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+a {
+    font-size: xx-large;
+    color: #B71822;
+}
+
+a:hover {
+    color: #6d1016;
+    text-decoration: underline 1px #6d1016;
+}
+
+img {
+    width: var(--img-width);
+    height: var(--img-height);
+}
